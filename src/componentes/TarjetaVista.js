@@ -2,31 +2,35 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import tarjetaFrente from '../assets/TarjetaFrente.png';
 import tarjetaReverso from '../assets/TarjetaReverso.png';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const TarjetaVista = () => {
 
     const [ver, cambiarVer] = useState(true);
-    const [reverso, cambiarReverso]  = useState(false);
+    const [reverso, cambiarReverso]  = useState(true);
     const [compartir, cambiarCompartir] = useState(false);
 
     return (
         <>
             <TarjetaVistaContenedor className='row justify-content-center mt-3'>
-                <div className="col-11 col-md-4 tarjeta-contenedor">
-                    { ver ? 
-                        reverso ? 
-                        <>
-                            <img src={tarjetaFrente} alt=""/>
-                        </>
+                <div className="col-12 col-md-4 tarjeta-contenedor">
+                    <AnimatePresence>
+                        { ver ?
+                            reverso &&(
+                                <motion.img 
+                                    src={tarjetaFrente} 
+                                    alt="Tarjet | Tu tarjeta de presentación online"
+                                    initial={{opacity:0, scale: 0}}
+                                    animate={{opacity: 1, scale: [1,1.05,1]}}
+                                    transition={{duration: 0.5}}
+                                    exit={{opacity: 0, x:100}}
+                                />
+                            )
                         :
-                        <>
-                            <img src={tarjetaReverso} alt=""/>
-                        </>
-                    :
-                        <>
-                        </>
-                    }
+                            <>
+                            </>
+                        }
+                    </AnimatePresence>
                 </div>
                 <Opciones className='col-11 text-center'>
                     <div className='row justify-content-around'>
@@ -145,21 +149,22 @@ const Opciones = styled.div`
     }
     p{
         margin:0;
+        font-size: 13px;
     }
 `;
 
-const Compartir = styled.div`
-    position: fixed;
-    width: 50%;
-    background: #fff;
-    margin-top: 10px;
-    padding: 15px;
-    border-radius: 11px;    
+// const Compartir = styled.div`
+//     position: fixed;
+//     width: 50%;
+//     background: #fff;
+//     margin-top: 10px;
+//     padding: 15px;
+//     border-radius: 11px;    
 
-    a{
-        font-size: 20px;
-        color: #000;
-    }
-`;
+//     a{
+//         font-size: 20px;
+//         color: #000;
+//     }
+// `;
 
 export default TarjetaVista;
