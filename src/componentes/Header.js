@@ -37,9 +37,8 @@ const Header = () => {
                             }}
                         >
                             <button onClick={()=> cambioMenu(true)}>
-                                <i class="bi bi-x" style={{color: '#fff'}}></i>
+                                <i className="bi bi-x" style={{color: '#fff'}}></i>
                             </button>
-
                         </motion.div>
                     }
                 </div>
@@ -65,7 +64,8 @@ const Encabezado = styled.div`
     padding: 5px 15px;
     backdrop-filter: blur(16px);
     background-color: rgba(234, 237, 240, 0.8);
-    position: sticky;
+    /* position: fixed;
+    width: 100%; */
     z-index: 1;
 
     h1{
