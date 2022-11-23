@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import tarjetaFrente from '../assets/TarjetaFrente.png';
 import tarjetaReverso from '../assets/TarjetaReverso.png';
 import { motion, AnimatePresence } from 'framer-motion';
+import Informacion from './Informacion';
 
 const TarjetaVista = () => {
 
@@ -14,9 +15,10 @@ const TarjetaVista = () => {
         <>
             <TarjetaVistaContenedor className='row justify-content-center mt-3'>
                 <div className="col-12 col-md-4 tarjeta-contenedor">
-                    <AnimatePresence>
+                    {/* <AnimatePresence>
                         { ver ?
-                            reverso &&(
+                            ver && (
+                                reverso ? 
                                 <motion.img 
                                     src={tarjetaFrente} 
                                     alt="Tarjet | Tu tarjeta de presentación online"
@@ -25,12 +27,45 @@ const TarjetaVista = () => {
                                     transition={{duration: 0.5}}
                                     exit={{opacity: 0, x:100}}
                                 />
+                                :
+                                <motion.img 
+                                    src={tarjetaReverso} 
+                                    alt="Tarjet | Tu tarjeta de presentación online"
+                                    initial={{opacity: 0, scale:0}}
+                                    animate={{opacity: 1, scale: [1,1.05,1]}}
+                                    transition={{duration: 0.5}}
+                                />
                             )
                         :
                             <>
                             </>
                         }
-                    </AnimatePresence>
+                    </AnimatePresence> */}
+                    { ver ? 
+                        reverso ? 
+                            <>    
+                                <motion.img 
+                                    src={tarjetaFrente} 
+                                    alt="Tarjet | Tu tarjeta de presentación online"
+                                    initial={{opacity:0, scale: 0}}
+                                    animate={{opacity: 1, scale: [1,1.05,1]}}
+                                    transition={{duration: 0.5}}
+                                    exit={{opacity: 0, scale: 0}}
+                                />
+                            </>
+                        :
+                        <>
+                            <motion.img 
+                                src={tarjetaReverso} 
+                                alt="Tarjet | Tu tarjeta de presentación online"
+                                animate={{opacity: 1, scale: [1,1.05,1]}}
+                                transition={{duration: 0.5}}
+                            />
+                        </>
+                    :
+                        <>
+                        </>
+                    }
                 </div>
                 <Opciones className='col-11 text-center'>
                     <div className='row justify-content-around'>
@@ -141,8 +176,13 @@ const TarjetaVistaContenedor = styled.div`
 const Opciones = styled.div`
     background: #fff;
     border-radius: 11px;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 5px 15px;
+    
+    @media screen and (max-width: 360px) and (max-height: 800px){
+        margin-top: 10px;
+    }
+
     i{
         font-size: 25px;
         padding: 0;

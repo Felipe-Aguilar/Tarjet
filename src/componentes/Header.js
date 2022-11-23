@@ -66,7 +66,7 @@ const Encabezado = styled.div`
     background-color: rgba(234, 237, 240, 0.8);
     /* position: fixed;
     width: 100%; */
-    z-index: 1;
+    /* z-index: 1; */
 
     h1{
         font-weight: bold;
@@ -96,11 +96,13 @@ const NavMenu = styled.div`
     width: 40%;
     height: 250px;
     position: fixed;
+    top:0;
+    left: 0;
     right: 0;
     padding: 20px;
     
     @media screen and (max-width: 575px){
-        width: 70%;
+        width: 100%;
     }
 
     a{
