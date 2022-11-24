@@ -5,11 +5,15 @@ import Informacion from './componentes/Informacion';
 
 const App = () => {
   return ( 
-    <div className='container-fluid'>
-      <Header />
-      <TarjetaVista />
-      <Informacion />
-    </div>
+    <>
+      <div className='container-fluid p-0'>
+        <Header />
+      </div>
+      <div className='container-fluid'>
+        <TarjetaVista />
+        <Informacion />
+      </div>
+    </>
   );
 }
 

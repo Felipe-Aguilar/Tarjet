@@ -6,6 +6,7 @@
 }
 body{
   background: #eef3f5;
+  box-sizing: border-box;
 }
 a{
   text-decoration: none;

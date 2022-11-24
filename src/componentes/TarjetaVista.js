@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import tarjetaFrente from '../assets/TarjetaFrente.png';
 import tarjetaReverso from '../assets/TarjetaReverso.png';
-import { motion, AnimatePresence } from 'framer-motion';
-import Informacion from './Informacion';
+import { motion, AnimatePresence, delay } from 'framer-motion';
 
 const TarjetaVista = () => {
 
@@ -15,10 +14,9 @@ const TarjetaVista = () => {
         <>
             <TarjetaVistaContenedor className='row justify-content-center mt-3'>
                 <div className="col-12 col-md-4 tarjeta-contenedor">
-                    {/* <AnimatePresence>
+                    <AnimatePresence>
                         { ver ?
-                            ver && (
-                                reverso ? 
+                            reverso && (
                                 <motion.img 
                                     src={tarjetaFrente} 
                                     alt="Tarjet | Tu tarjeta de presentación online"
@@ -27,45 +25,29 @@ const TarjetaVista = () => {
                                     transition={{duration: 0.5}}
                                     exit={{opacity: 0, x:100}}
                                 />
-                                :
+                            )
+                        :
+                            <>
+                            </>
+                        }
+                    </AnimatePresence>
+                    <AnimatePresence>
+                        { ver ?
+                            !reverso && (
                                 <motion.img 
-                                    src={tarjetaReverso} 
+                                    src={tarjetaReverso}
                                     alt="Tarjet | Tu tarjeta de presentación online"
-                                    initial={{opacity: 0, scale:0}}
+                                    initial={{opacity:0, scale: 0}}
                                     animate={{opacity: 1, scale: [1,1.05,1]}}
-                                    transition={{duration: 0.5}}
+                                    transition={{delay:1, duration: 0.5}}
+                                    exit={{transition:100 ,opacity: 0, y:100}}
                                 />
                             )
                         :
                             <>
                             </>
                         }
-                    </AnimatePresence> */}
-                    { ver ? 
-                        reverso ? 
-                            <>    
-                                <motion.img 
-                                    src={tarjetaFrente} 
-                                    alt="Tarjet | Tu tarjeta de presentación online"
-                                    initial={{opacity:0, scale: 0}}
-                                    animate={{opacity: 1, scale: [1,1.05,1]}}
-                                    transition={{duration: 0.5}}
-                                    exit={{opacity: 0, scale: 0}}
-                                />
-                            </>
-                        :
-                        <>
-                            <motion.img 
-                                src={tarjetaReverso} 
-                                alt="Tarjet | Tu tarjeta de presentación online"
-                                animate={{opacity: 1, scale: [1,1.05,1]}}
-                                transition={{duration: 0.5}}
-                            />
-                        </>
-                    :
-                        <>
-                        </>
-                    }
+                    </AnimatePresence>
                 </div>
                 <Opciones className='col-11 text-center'>
                     <div className='row justify-content-around'>
@@ -109,35 +91,38 @@ const TarjetaVista = () => {
                         </div>
                     </div>
                 </Opciones>
-                { compartir &&
-                    <motion.div 
-                        className='row justify-content-between compartir'
+                <AnimatePresence>
+                    { compartir && (
+                        <motion.div 
+                            className='row justify-content-around compartir'
 
-                        initial={{opacity:0, scale: 0}}
-                        animate={{opacity:1, scale:1}}
-                    >
-                        <div className='w-auto'>
-                            <a href="">
-                                <i className="bi bi-whatsapp"></i>
-                            </a>
-                        </div>
-                        <div className='w-auto'>
-                            <a href="">
-                                <i className="bi bi-facebook"></i>
-                            </a>
-                        </div>
-                        <div className='w-auto'>
-                            <a href="">
-                                <i className="bi bi-instagram"></i>
-                            </a>
-                        </div>
-                        <div className='w-auto'>
-                            <a href="">
-                                <i className="bi bi-twitter"></i>
-                            </a>
-                        </div>
-                    </motion.div>
-                }
+                            initial={{opacity:0, scale: 0}}
+                            animate={{opacity:1, scale:1}}
+                            exit={{opacity:0, scale:0, y:-50}}
+                        >
+                            <div className='w-auto'>
+                                <a href="">
+                                    <i className="bi bi-whatsapp"></i>
+                                </a>
+                            </div>
+                            <div className='w-auto'>
+                                <a href="">
+                                    <i className="bi bi-facebook"></i>
+                                </a>
+                            </div>
+                            <div className='w-auto'>
+                                <a href="">
+                                    <i className="bi bi-instagram"></i>
+                                </a>
+                            </div>
+                            <div className='w-auto'>
+                                <a href="">
+                                    <i className="bi bi-twitter"></i>
+                                </a>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </TarjetaVistaContenedor>
         </>
     );
@@ -160,7 +145,8 @@ const TarjetaVistaContenedor = styled.div`
         }
     }
     .compartir{
-        position: fixed;
+        position: absolute;
+        z-index: 1;
         width: 50%;
         background: #fff;
         margin-top: 300px;

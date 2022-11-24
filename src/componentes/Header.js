@@ -8,7 +8,7 @@ const Header = () => {
 
     return (
         <>
-            <Encabezado className='row justify-content-between align-items-center'>
+            <Encabezado className='row m-0 justify-content-between align-items-center'>
                 <div className='w-auto'>
                     <h1>Tarjet.</h1>
                 </div>
@@ -43,19 +43,22 @@ const Header = () => {
                     }
                 </div>
             </Encabezado>
-            {!menu &&
-                <motion.div
-                    initial={{opacity: 0, scale:0, x:0}}
-                    whileInView={{opacity: 1, scale:1, x:15}}
-                >
+            <AnimatePresence>
+                {!menu &&(
                     <NavMenu>
-                        <a href="">Option</a>
-                        <a href="">Option</a>
-                        <a href="">Option</a>
-                        <a href="">Option</a>
+                        <motion.div
+                            initial={{opacity: 0, scale:0}}
+                            animate={{opacity: 1, scale:1}}
+                            exit={{opacity:0, scale:0, x: 200}}
+                        >
+                            <a href="">Option</a>
+                            <a href="">Option</a>
+                            <a href="">Option</a>
+                            <a href="">Option</a>
+                        </motion.div>
                     </NavMenu>
-                </motion.div>
-            }
+                )}
+            </AnimatePresence>
         </>
     );
 }
@@ -92,21 +95,22 @@ const Encabezado = styled.div`
 `;
 
 const NavMenu = styled.div`
-    background: #fff;
-    width: 40%;
-    height: 250px;
-    position: fixed;
-    top:0;
-    left: 0;
-    right: 0;
-    padding: 20px;
+    div{
+        background: #fff;
+        width: 30%;
+        position: absolute;
+        right: 0;
+        padding: 20px;
+        z-index: 1;
+        
+        @media screen and (max-width: 575px){
+            width: 100%;
+            height: 85%;
+        }
     
-    @media screen and (max-width: 575px){
-        width: 100%;
-    }
-
-    a{
-        display: block;
+        a{
+            display: block;
+        }
     }
 `;
 
