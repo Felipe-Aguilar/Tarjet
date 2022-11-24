@@ -1,24 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import Promo1 from '../assets/promo1.png';
+import Perfil from './Perfil';
 import { motion } from 'framer-motion';
 
 const Informacion = () => {
-    return ( 
-        <InformacionContenedor className='row mt-4 justify-content-center'>
-            <div className='col-11 bg-success contenedor'>
-                <h2>Title</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-                <motion.img 
-                    src={Promo1} 
-                    alt="Tarjet | Tu tarjeta de presentación"
-                    initial={{scale:0}}
-                    whileInView={{scale: [1,1.2,1]}}
-                />
-            </div>
-        </InformacionContenedor>
+    return (
+        <>
+            <Perfil />
+            
+            <InformacionContenedor className='row mt-4 justify-content-center'>
+                <div className='col-11 bg-success contenedor'>
+                    <h2>Title</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <motion.img 
+                        src={Promo1} 
+                        alt="Tarjet | Tu tarjeta de presentación"
+                        initial={{scale:0}}
+                        whileInView={{scale: [1,1.2,1]}}
+                    />
+                </div>
+            </InformacionContenedor>
+        </>
     );
 }
 
@@ -36,7 +41,10 @@ const InformacionContenedor = styled.div`
         }
 
         img{
-            width: 90%;
+            width: 20%;
+            @media screen and (max-width: 575px){
+                width: 90%;
+            }
         }
     }
 `;

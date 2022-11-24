@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './componentes/Header';
 import TarjetaVista from './componentes/TarjetaVista';
 import Informacion from './componentes/Informacion';
+import Footer from './componentes/Footer';
 
 const App = () => {
   return ( 
@@ -12,6 +13,7 @@ const App = () => {
       <div className='container-fluid'>
         <TarjetaVista />
         <Informacion />
+        <Footer />
       </div>
     </>
   );
