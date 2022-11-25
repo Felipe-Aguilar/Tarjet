@@ -247,7 +247,7 @@ const ContenedorRedSocial = styled.div`
         margin: 0 10px;
 
         img{
-            width: 30px;
+            width: 25px;
         }
     }
 `;
