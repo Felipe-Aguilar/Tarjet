@@ -1,8 +1,9 @@
 import React from 'react';
 import Header from './componentes/Header';
 import TarjetaVista from './componentes/TarjetaVista';
-import Informacion from './componentes/Informacion';
+import TarjetSite from './componentes/TarjetSite';
 import Footer from './componentes/Footer';
+import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return ( 
@@ -11,8 +12,14 @@ const App = () => {
         <Header />
       </div>
       <div className='container-fluid'>
-        <TarjetaVista />
-        <Informacion />
+
+        <Routes>
+          <Route path='*' element={<TarjetaVista />}/>          
+          <Route path='/' element={<TarjetaVista />}/>   
+
+          <Route path='/tarjetSite' element={<TarjetSite />}/>          
+        </Routes>
+
         <Footer />
       </div>
     </>

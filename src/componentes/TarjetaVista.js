@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import tarjetaFrente from '../assets/TarjetaFrente.png';
 import tarjetaReverso from '../assets/TarjetaReverso.png';
 import { motion, AnimatePresence, delay } from 'framer-motion';
+import Informacion from './Informacion';
+import { NavLink } from 'react-router-dom';
 
 const TarjetaVista = () => {
 
@@ -17,14 +19,16 @@ const TarjetaVista = () => {
                     <AnimatePresence>
                         { ver ?
                             reverso && (
-                                <motion.img 
-                                    src={tarjetaFrente} 
-                                    alt="Tarjet | Tu tarjeta de presentación online"
-                                    initial={{opacity:0, scale: 0}}
-                                    animate={{opacity: 1, scale: [1,1.05,1]}}
-                                    transition={{duration: 0.5}}
-                                    exit={{opacity: 0, x:100}}
-                                />
+                                <NavLink to="/tarjetSite">
+                                    <motion.img 
+                                        src={tarjetaFrente} 
+                                        alt="Tarjet | Tu tarjeta de presentación online"
+                                        initial={{opacity:0, scale: 0}}
+                                        animate={{opacity: 1, scale: [1,1.05,1]}}
+                                        transition={{duration: 0.5}}
+                                        exit={{opacity: 0, x:100}}
+                                    />
+                                </NavLink>
                             )
                         :
                             <>
@@ -34,14 +38,16 @@ const TarjetaVista = () => {
                     <AnimatePresence>
                         { ver ?
                             !reverso && (
-                                <motion.img 
-                                    src={tarjetaReverso}
-                                    alt="Tarjet | Tu tarjeta de presentación online"
-                                    initial={{opacity:0, scale: 0}}
-                                    animate={{opacity: 1, scale: [1,1.05,1]}}
-                                    transition={{delay:1, duration: 0.5}}
-                                    exit={{transition:100 ,opacity: 0, y:100}}
-                                />
+                                <NavLink to="/tarjetSite">
+                                    <motion.img 
+                                        src={tarjetaReverso}
+                                        alt="Tarjet | Tu tarjeta de presentación online"
+                                        initial={{opacity:0, scale: 0}}
+                                        animate={{opacity: 1, scale: [1,1.05,1]}}
+                                        transition={{delay:1, duration: 0.5}}
+                                        exit={{transition:100 ,opacity: 0, y:100}}
+                                    />
+                                </NavLink>
                             )
                         :
                             <>
@@ -124,6 +130,8 @@ const TarjetaVista = () => {
                     )}
                 </AnimatePresence>
             </TarjetaVistaContenedor>
+
+            <Informacion />
         </>
     );
 }
