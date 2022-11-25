@@ -145,7 +145,7 @@ const InformacionContenedor2 = styled.div`
         }
 
         img{
-            width: 250px;
+            width: 260px;
             display: block;
             margin: auto;
             margin-top: 50px;
