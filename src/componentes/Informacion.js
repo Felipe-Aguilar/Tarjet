@@ -29,9 +29,11 @@ const Informacion = () => {
 
                         initial={{opacity:0, scale:0}}
                         whileInView={{opacity:1, scale: [1,1.1,1]}}
+                        viewport={{once: true}}
+                        whileTap={{scale: 1}}
                     />
                     <motion.button
-                        whileTap={{scale: 1.1}}
+                        whileTap={{scale: 1.4}}
                     >
                         Buscar <i className="bi bi-arrow-right"></i>
                     </motion.button>
@@ -45,7 +47,7 @@ const InformacionContenedor = styled.div`
     .contenedor{
         background: #406fe8;
         border-radius: 20px;
-        height: 500px;
+        /* height: 500px; */
         padding: 30px 30px;
         color: #fff;
 
