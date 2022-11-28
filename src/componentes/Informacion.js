@@ -12,36 +12,6 @@ const Informacion = () => {
     return (
         <>
             {/* <Perfil /> */}
-            
-            <InformacionContenedor className='row mt-4 justify-content-center'>
-                <div className='col-11 contenedor'>
-                    <p>
-                        Encuentra personas
-                        <span> que ofrecen servicios </span>
-                        de tu interés, <span>cerca de tí</span>
-                    </p>
-                    {/* <img className='logo' src={Logo} alt="Tarjet | Logo" /> */}
-                    <p className="nacional mt-5">
-                        ó a nivel <br/>
-                        <span> NACIONAL</span>
-                    </p>
-                    <motion.img 
-                        src={Promo} 
-                        alt="Tarjet | Tu tarjeta de presentación"
-                        className='celularPromo'
-
-                        initial={{opacity:0, scale:0}}
-                        whileInView={{opacity:1, scale: [1,1.1,1]}}
-                        viewport={{once: true}}
-                        whileTap={{scale: 1}}
-                    />
-                    <motion.button
-                        whileTap={{scale: 1.4}}
-                    >
-                        Buscar <i className="bi bi-arrow-right"></i>
-                    </motion.button>
-                </div>
-            </InformacionContenedor>
 
             <InformacionContenedor3 className='row mt-4 justify-content-center'>
                 <div className='col-11 contenedor'>
@@ -95,6 +65,36 @@ const Informacion = () => {
                     </motion.button>
                 </div>
             </InformacionContenedor2>
+
+            <InformacionContenedor className='row mt-4 justify-content-center'>
+                <div className='col-11 contenedor'>
+                    <p>
+                        Encuentra personas
+                        <span> que ofrecen servicios </span>
+                        de tu interés, <span>cerca de tí</span>
+                    </p>
+                    {/* <img className='logo' src={Logo} alt="Tarjet | Logo" /> */}
+                    <p className="nacional mt-5">
+                        ó a nivel <br/>
+                        <span> NACIONAL</span>
+                    </p>
+                    <motion.img 
+                        src={Promo} 
+                        alt="Tarjet | Tu tarjeta de presentación"
+                        className='celularPromo'
+
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale: [1,1.1,1]}}
+                        viewport={{once: true}}
+                        whileTap={{scale: 1}}
+                    />
+                    <motion.button
+                        whileTap={{scale: 1.4}}
+                    >
+                        Buscar <i className="bi bi-arrow-right"></i>
+                    </motion.button>
+                </div>
+            </InformacionContenedor>
         </>
     );
 }
@@ -203,7 +203,8 @@ const InformacionContenedor2 = styled.div`
 `;
 const InformacionContenedor3 = styled.div`
     .contenedor{
-        background-image: url(${FondoContenedor3});
+        /* background-image: url(${FondoContenedor3}); */
+        background: #fff;
         border-radius: 20px;
 
         /* height: 500px; */
