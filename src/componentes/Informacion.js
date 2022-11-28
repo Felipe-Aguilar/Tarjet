@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import Promo from '../assets/Promo.png';
 import Promo2 from '../assets/Promo2.png';
+import FondoContenedor3 from '../assets/FondoContenedor3.jpg';
 import Perfil from './Perfil';
 import { motion } from 'framer-motion';
 import Logo from '../assets/LogoOficial.png';
+import LogoOficial from '../assets/TarjetLogo.png';
 
 const Informacion = () => {
     return (
@@ -40,6 +42,34 @@ const Informacion = () => {
                     </motion.button>
                 </div>
             </InformacionContenedor>
+
+            <InformacionContenedor3 className='row mt-4 justify-content-center'>
+                <div className='col-11 contenedor'>
+                    <p>
+                        Tarjet es la tarjeta de presentación virtual para todo el mundo. Crea y configura tu tarjet site.
+                    </p>
+                    <p className='mt-3'>
+                        Completamente gratis
+                    </p>
+                    <p className='mt-3 text-right'>
+                        ¡Haz que todos te conozcan! 
+                    </p>
+                    <motion.img 
+                        src={LogoOficial} 
+                        alt="Tarjet | Logo" 
+
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale: [1,1.1,1]}}
+                        viewport={{once: true}}
+                        whileTap={{scale: 1}}
+                    />
+                    <motion.button
+                        whileTap={{scale: 1.4}}
+                    >
+                        Regístrate <i className="bi bi-arrow-right"></i>
+                    </motion.button>
+                </div>
+            </InformacionContenedor3>
 
             <InformacionContenedor2 className='row mt-4 justify-content-center'>
                 <div className='col-11 contenedor'>
@@ -157,6 +187,50 @@ const InformacionContenedor2 = styled.div`
             font-size: 25px;
             background: transparent;
             color: #fff;
+            padding: 0;
+            margin-top: 30px;
+            outline: none;
+            
+            @media screen and (max-width: 360px) and (max-height: 800px){
+                margin-top: 30px;
+            }
+
+            i{
+                padding-top: 5px;
+            }
+        }
+    }
+`;
+const InformacionContenedor3 = styled.div`
+    .contenedor{
+        background-image: url(${FondoContenedor3});
+        border-radius: 20px;
+
+        /* height: 500px; */
+        padding: 30px 30px;
+        color: #000;
+
+        p{
+            margin: 0;
+            span{
+                font-size: 20px;
+            }
+        }
+
+        img{
+            width: 230px;
+            display: block;
+            float: right;
+            
+            margin-top: 50px;
+            /* margin-bottom: 50px; */
+        }
+
+        button{
+            border:none;
+            font-size: 25px;
+            background: transparent;
+            color: #000;
             padding: 0;
             margin-top: 30px;
             outline: none;
