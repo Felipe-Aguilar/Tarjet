@@ -20,8 +20,8 @@ const Informacion = () => {
                         <span> que ofrecen servicios </span>
                         de tu interés, <span>cerca de tí</span>
                     </p>
-                    <img className='logo' src={Logo} alt="Tarjet | Logo" />
-                    <p className="nacional">
+                    {/* <img className='logo' src={Logo} alt="Tarjet | Logo" /> */}
+                    <p className="nacional mt-5">
                         ó a nivel <br/>
                         <span> NACIONAL</span>
                     </p>
@@ -125,13 +125,13 @@ const InformacionContenedor = styled.div`
             width: 20%;
             position: absolute;
             right: 0;
-            bottom: 45px;
+            bottom: 40px;
             @media screen and (max-width: 575px){
                 width: 200px;
             }
             @media screen and (max-width: 360px) and (max-height: 800px){
                 width: 170px;
-                bottom: 80px;
+                bottom: 30px;
             }
         }
 
