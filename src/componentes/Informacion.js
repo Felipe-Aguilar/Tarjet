@@ -9,6 +9,7 @@ import Logo from '../assets/LogoOficial.png';
 import LogoOficial from '../assets/TarjetLogo.png';
 import Slider1 from '../assets/Slide1.jpg';
 import Slider2 from '../assets/Slide2.jpg';
+import Banner3 from '../assets/Banner3.jpg';
 
 const Informacion = () => {
     return (
@@ -17,7 +18,7 @@ const Informacion = () => {
 
             <InformacionContenedor3 className='row mt-4 justify-content-center'>
                 <div className='col-11 contenedor'>
-                    <p>
+                    {/* <p>
                         Tarjet es la tarjeta de presentación virtual para todo el mundo. Crea y configura tu tarjet site.
                     </p>
                     <p className='mt-3'>
@@ -39,7 +40,11 @@ const Informacion = () => {
                         whileTap={{scale: 1.4}}
                     >
                         Regístrate <i className="bi bi-arrow-right"></i>
-                    </motion.button>
+                    </motion.button> */}
+                    <img src={Banner3} 
+                        alt="Tarjet | Tú tarjeta de presentación Online" 
+                        className='img-fluid'
+                    />
                 </div>
             </InformacionContenedor3>
 
@@ -275,7 +280,7 @@ const InformacionContenedor3 = styled.div`
         border-radius: 20px;
 
         /* height: 500px; */
-        padding: 30px 30px;
+        /* padding: 30px 30px; */
         color: #000;
 
         p{
@@ -286,11 +291,11 @@ const InformacionContenedor3 = styled.div`
         }
 
         img{
-            width: 230px;
+            /* width: 230px;
             display: block;
-            float: right;
+            float: right; */
             
-            margin-top: 50px;
+            /* margin-top: 50px; */
             /* margin-bottom: 50px; */
         }
 
