@@ -41,7 +41,7 @@ const Informacion = () => {
                 </div>
             </InformacionContenedor3>
 
-            <InformacionContenedor2 className='row mt-4 justify-content-center'>
+            {/* <InformacionContenedor2 className='row mt-4 justify-content-center'>
                 <div className='col-11 contenedor'>
                     <p>
                         <span>C</span>rea tu propia tarjeta de presentación y compártela con quien tú quieras, <span>completamente gratis.</span>
@@ -57,6 +57,37 @@ const Informacion = () => {
                     />
                     <p className='text-right'>
                         Tú decides si hacer tu tarjeta <span>pública o privada.</span>
+                    </p>
+                    <motion.button
+                        whileTap={{scale: 1.4}}
+                    >
+                        Regístrate <i className="bi bi-arrow-right"></i>
+                    </motion.button>
+                </div>
+            </InformacionContenedor2> */}
+
+            <InformacionContenedor2 className='row mt-4 justify-content-center'>
+                <div className='col-11 contenedor'>
+                    <p>
+                        <span>E</span>lige de nuestra galería el diseño que más te guste para tu <span><b>Tarjet</b></span>.
+                    </p>
+                    <p className='mt-3 text-right'>
+                        <span>C</span>ompártela fácil y rápido, haz que conozcan lo que haces.
+                    </p>
+                    <motion.img 
+                        src={Promo2} 
+                        alt="Tarjet | Logo" 
+
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale: [1,1.1,1]}}
+                        viewport={{once: true}}
+                        whileTap={{scale: 1}}
+                    />
+                    <p className='text-right'>
+                        Tú decides si hacer tu <span><b>Tarjet</b> pública o privada</span>
+                    </p>
+                    <p className='mt-3'>
+                        Todo esto es <span>GRATIS</span>
                     </p>
                     <motion.button
                         whileTap={{scale: 1.4}}
@@ -161,7 +192,7 @@ const InformacionContenedor = styled.div`
 
 const InformacionContenedor2 = styled.div`
     .contenedor{
-        background: #58775b;
+        background: #3ea97b;
         border-radius: 20px;
         /* height: 500px; */
         padding: 30px 30px;
@@ -176,9 +207,9 @@ const InformacionContenedor2 = styled.div`
 
         img{
             width: 260px;
-            display: block;
-            margin: auto;
-            margin-top: 50px;
+            /* display: block;
+            margin: auto; */
+            margin-top: 40px;
             margin-bottom: 50px;
         }
 
@@ -190,6 +221,7 @@ const InformacionContenedor2 = styled.div`
             padding: 0;
             margin-top: 30px;
             outline: none;
+            float: right;
             
             @media screen and (max-width: 360px) and (max-height: 800px){
                 margin-top: 30px;
