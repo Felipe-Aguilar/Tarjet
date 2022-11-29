@@ -7,6 +7,8 @@ import Perfil from './Perfil';
 import { motion } from 'framer-motion';
 import Logo from '../assets/LogoOficial.png';
 import LogoOficial from '../assets/TarjetLogo.png';
+import Slider1 from '../assets/Slide1.jpg';
+import Slider2 from '../assets/Slide2.jpg';
 
 const Informacion = () => {
     return (
@@ -96,6 +98,39 @@ const Informacion = () => {
                     </motion.button>
                 </div>
             </InformacionContenedor2>
+
+            <Slider className='row mt-4 justify-content-center'>
+                
+                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <div className='col-11 contenedor'>
+                                    <img src={Slider1} 
+                                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                                        className='img-fluid'
+                                    />
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className='col-11 contenedor'>
+                                    <img src={Slider2} 
+                                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                                        className='img-fluid'
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        {/* <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Next</span>
+                        </a> */}
+                    </div>
+                
+            </Slider>
 
             <InformacionContenedor className='row mt-4 justify-content-center'>
                 <div className='col-11 contenedor'>
@@ -278,5 +313,22 @@ const InformacionContenedor3 = styled.div`
         }
     }
 `;
+
+const Slider = styled.div`
+    .contenedor{
+        background: #3ea97b;
+        border-radius: 20px;
+        /* height: 500px; */
+        padding: 0;
+        color: #fff;
+        display: block;
+        margin: auto;
+        
+        img{
+            border-radius: 20px;
+        }
+    }
+`;
+
 
 export default Informacion;
