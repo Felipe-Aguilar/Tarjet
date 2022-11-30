@@ -9,6 +9,8 @@ import Logo from '../assets/LogoOficial.png';
 import LogoOficial from '../assets/TarjetLogo.png';
 import Slider1 from '../assets/Slide1.jpg';
 import Slider2 from '../assets/Slide2.jpg';
+import Slider3 from '../assets/Slide3.png';
+import Slider4 from '../assets/Slide4.png';
 import Banner3 from '../assets/Banner3.png';
 
 const Informacion = () => {
@@ -68,12 +70,28 @@ const Informacion = () => {
                                     />
                                 </div>
                             </div>
+                            <div className="carousel-item">
+                                <div className='col-11 contenedor'>
+                                    <img src={Slider3} 
+                                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                                        className='img-fluid'
+                                    />
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className='col-11 contenedor'>
+                                    <img src={Slider4} 
+                                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                                        className='img-fluid'
+                                    />
+                                </div>
+                            </div>
                         </div>
                         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                             <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span className="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
                             <span className="carousel-control-next-icon" aria-hidden="true"></span>
                             <span className="sr-only">Next</span>
                         </a>
