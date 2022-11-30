@@ -7,6 +7,9 @@ import Perfil from './Perfil';
 import { motion } from 'framer-motion';
 import Logo from '../assets/LogoOficial.png';
 import LogoOficial from '../assets/TarjetLogo.png';
+import Slider1 from '../assets/Slide1.jpg';
+import Slider2 from '../assets/Slide2.jpg';
+import Banner3 from '../assets/Banner3.png';
 
 const Informacion = () => {
     return (
@@ -15,7 +18,7 @@ const Informacion = () => {
 
             <InformacionContenedor3 className='row mt-4 justify-content-center'>
                 <div className='col-11 contenedor'>
-                    <p>
+                    {/* <p>
                         Tarjet es la tarjeta de presentación virtual para todo el mundo. Crea y configura tu tarjet site.
                     </p>
                     <p className='mt-3'>
@@ -37,11 +40,48 @@ const Informacion = () => {
                         whileTap={{scale: 1.4}}
                     >
                         Regístrate <i className="bi bi-arrow-right"></i>
-                    </motion.button>
+                    </motion.button> */}
+                    <img src={Banner3} 
+                        alt="Tarjet | Tú tarjeta de presentación Online" 
+                        className='img-fluid'
+                    />
                 </div>
             </InformacionContenedor3>
 
-            <InformacionContenedor2 className='row mt-4 justify-content-center'>
+            <Slider className='row mt-4 justify-content-center'>
+                
+                    <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                        <div className="carousel-inner">
+                            <div className="carousel-item active">
+                                <div className='col-11 contenedor'>
+                                    <img src={Slider1} 
+                                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                                        className='img-fluid'
+                                    />
+                                </div>
+                            </div>
+                            <div className="carousel-item">
+                                <div className='col-11 contenedor'>
+                                    <img src={Slider2} 
+                                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                                        className='img-fluid'
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Next</span>
+                        </a>
+                    </div>
+                
+            </Slider>
+
+            {/* <InformacionContenedor2 className='row mt-4 justify-content-center'>
                 <div className='col-11 contenedor'>
                     <p>
                         <span>C</span>rea tu propia tarjeta de presentación y compártela con quien tú quieras, <span>completamente gratis.</span>
@@ -57,6 +97,37 @@ const Informacion = () => {
                     />
                     <p className='text-right'>
                         Tú decides si hacer tu tarjeta <span>pública o privada.</span>
+                    </p>
+                    <motion.button
+                        whileTap={{scale: 1.4}}
+                    >
+                        Regístrate <i className="bi bi-arrow-right"></i>
+                    </motion.button>
+                </div>
+            </InformacionContenedor2> */}
+
+            <InformacionContenedor2 className='row mt-4 justify-content-center'>
+                <div className='col-11 contenedor'>
+                    <p>
+                        <span>E</span>lige de nuestra galería el diseño que más te guste para tu <span><b>Tarjet</b></span>.
+                    </p>
+                    <p className='mt-3 text-right'>
+                        <span>C</span>ompártela fácil y rápido, haz que conozcan lo que haces.
+                    </p>
+                    <motion.img 
+                        src={Promo2} 
+                        alt="Tarjet | Logo" 
+
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale: [1,1.1,1]}}
+                        viewport={{once: true}}
+                        whileTap={{scale: 1}}
+                    />
+                    <p className='text-right'>
+                        Tú decides si hacer tu <span><b>Tarjet</b> pública o privada</span>
+                    </p>
+                    <p className='mt-3'>
+                        Todo esto es <span>GRATIS</span>
                     </p>
                     <motion.button
                         whileTap={{scale: 1.4}}
@@ -95,6 +166,7 @@ const Informacion = () => {
                     </motion.button>
                 </div>
             </InformacionContenedor>
+
         </>
     );
 }
@@ -161,7 +233,7 @@ const InformacionContenedor = styled.div`
 
 const InformacionContenedor2 = styled.div`
     .contenedor{
-        background: #58775b;
+        background: #3ea97b;
         border-radius: 20px;
         /* height: 500px; */
         padding: 30px 30px;
@@ -176,9 +248,9 @@ const InformacionContenedor2 = styled.div`
 
         img{
             width: 260px;
-            display: block;
-            margin: auto;
-            margin-top: 50px;
+            /* display: block;
+            margin: auto; */
+            margin-top: 40px;
             margin-bottom: 50px;
         }
 
@@ -190,6 +262,7 @@ const InformacionContenedor2 = styled.div`
             padding: 0;
             margin-top: 30px;
             outline: none;
+            float: right;
             
             @media screen and (max-width: 360px) and (max-height: 800px){
                 margin-top: 30px;
@@ -208,7 +281,7 @@ const InformacionContenedor3 = styled.div`
         border-radius: 20px;
 
         /* height: 500px; */
-        padding: 30px 30px;
+        /* padding: 30px 30px; */
         color: #000;
 
         p{
@@ -219,11 +292,11 @@ const InformacionContenedor3 = styled.div`
         }
 
         img{
-            width: 230px;
+            /* width: 230px;
             display: block;
-            float: right;
+            float: right; */
             
-            margin-top: 50px;
+            /* margin-top: 50px; */
             /* margin-bottom: 50px; */
         }
 
@@ -246,5 +319,22 @@ const InformacionContenedor3 = styled.div`
         }
     }
 `;
+
+const Slider = styled.div`
+    .contenedor{
+        background: #3ea97b;
+        border-radius: 20px;
+        /* height: 500px; */
+        padding: 0;
+        color: #fff;
+        display: block;
+        margin: auto;
+        
+        img{
+            border-radius: 20px;
+        }
+    }
+`;
+
 
 export default Informacion;
