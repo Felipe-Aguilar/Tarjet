@@ -9,7 +9,11 @@ import Logo from '../assets/LogoOficial.png';
 import LogoOficial from '../assets/TarjetLogo.png';
 import Slider1 from '../assets/Slide1.jpg';
 import Slider2 from '../assets/Slide2.jpg';
+<<<<<<< HEAD
 import Banner3 from '../assets/Banner3.png';
+=======
+import Banner3 from '../assets/Banner3.jpg';
+>>>>>>> c33493fb0e1edefb7d5202f8af6df33ba194fd4b
 
 const Informacion = () => {
     return (
