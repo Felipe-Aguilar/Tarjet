@@ -156,6 +156,7 @@ const TarjetSite = () => {
 }
 
 const HeaderPerfil = styled.div`
+<<<<<<< HEAD
     /* background: url(${PerfilPrueba});
     background-position: top;
     background-repeat: no-repeat;
@@ -164,6 +165,14 @@ const HeaderPerfil = styled.div`
     height: 180px;
 
     padding: 0px 0 0 0;
+=======
+    background: url(${PerfilPrueba});
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 24px 0 0 0;
+>>>>>>> b879ace453e1e55b3ae5cf3b3d37b1a0e8681a1c
     img{
         /* width: 70px; */
         /* width: 100px; */
