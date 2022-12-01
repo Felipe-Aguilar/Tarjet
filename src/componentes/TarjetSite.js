@@ -3,15 +3,19 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import FotoPerfil from '../assets/FotoPerfil.png';
 import Logo from '../assets/LogoOficial.png';
+import FondoPerfil1 from '../assets/FondoPerfil1.png';
+import PerfilPrueba from '../assets/PerfilPrueba.png';
 
 const TarjetSite = () => {
     return ( 
         <>
-            <HeaderPerfil className='row mt-4 justify-content-center'>
+            <HeaderPerfil className='row justify-content-center'>
                 <div className='w-auto text-center'>
-                    <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    {/* <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
                     <h2>Name</h2>
-                    <p>Profession</p>
+                    <p>Profession</p> */}
+
+                    <img src={FondoPerfil1} alt="Tarjet | Tú tarjeta de presentación Online" className='img-fluid'/>
                 </div>
 
                 {/* <div className='row '>
@@ -152,8 +156,17 @@ const TarjetSite = () => {
 }
 
 const HeaderPerfil = styled.div`
+    /* background: url(${PerfilPrueba});
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover; */
+
+    height: 180px;
+
+    padding: 0px 0 0 0;
     img{
-        width: 70px;
+        /* width: 70px; */
+        /* width: 100px; */
     }
     h2{
         margin: 0;
