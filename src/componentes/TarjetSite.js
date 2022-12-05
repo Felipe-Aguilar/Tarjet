@@ -5,6 +5,7 @@ import FotoPerfil from '../assets/FotoPerfil.png';
 import Logo from '../assets/LogoOficial.png';
 import FondoPerfil1 from '../assets/FondoPerfil1.png';
 import PerfilPrueba from '../assets/PerfilPrueba.png';
+import { useTransform } from 'framer-motion';
 
 
 const TarjetSite = () => {
@@ -12,14 +13,15 @@ const TarjetSite = () => {
     const [users, datoUsuario] = useState([]);
 
     const datosUsuarios = async () =>{
-        const data = await fetch("https://jsonplaceholder.typicode.com/users")
-        const usuarios = await data.json()
+        const data = await fetch("https://jsonplaceholder.typicode.com/users");
+        const usuarios = await data.json();
 
         datoUsuario(usuarios);
     }
 
     useEffect(()=>{
         datosUsuarios();
+
     }, []);
 
     return ( 
@@ -29,7 +31,7 @@ const TarjetSite = () => {
                     <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
                     {users.map(usuario => {
                         if (usuario.id == 1) 
-                            return <h2>{usuario.name}</h2>
+                            return <h2 key={usuario.id}>{usuario.name}</h2>
                         
                     })}
                     <p>Profession</p>
