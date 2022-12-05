@@ -26,7 +26,6 @@ const TarjetSite = () => {
         <>
             <HeaderPerfil className='row justify-content-center'>
                 <div className='w-auto text-center'>
-<<<<<<< HEAD
                     <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
                     {users.map(usuario => {
                         if (usuario.id == 1) 
@@ -34,13 +33,6 @@ const TarjetSite = () => {
                         
                     })}
                     <p>Profession</p>
-=======
-                    {/* <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
-                    <h2>Name</h2>
-                    <p>Profession</p> */}
-
-                    <img src={FondoPerfil1} alt="Tarjet | Tú tarjeta de presentación Online" className='img-fluid'/>
->>>>>>> 3d0c01dca053daad38bf142a797086c1ecf78305
                 </div>
 
                 {/* <div className='row '>
@@ -181,29 +173,9 @@ const TarjetSite = () => {
 }
 
 const HeaderPerfil = styled.div`
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    /* background: url(${PerfilPrueba});
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover; */
-
-    height: 180px;
-
-    padding: 0px 0 0 0;
-=======
-    background: url(${PerfilPrueba});
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-
->>>>>>> 3d0c01dca053daad38bf142a797086c1ecf78305
     padding: 24px 0 0 0;
->>>>>>> b879ace453e1e55b3ae5cf3b3d37b1a0e8681a1c
     img{
-        /* width: 70px; */
-        /* width: 100px; */
+        width: 70px;
     }
     h2{
         margin: 0;
