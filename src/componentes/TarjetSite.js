@@ -11,6 +11,7 @@ import { useTransform } from 'framer-motion';
 const TarjetSite = () => {
 
     const [users, datoUsuario] = useState([]);
+    const idUsuario = 1;
 
     const datosUsuarios = async () =>{
         const data = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -21,7 +22,6 @@ const TarjetSite = () => {
 
     useEffect(()=>{
         datosUsuarios();
-
     }, []);
 
     return ( 
@@ -30,7 +30,7 @@ const TarjetSite = () => {
                 <div className='w-auto text-center'>
                     <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
                     {users.map(usuario => {
-                        if (usuario.id == 1) 
+                        if (usuario.id == idUsuario) 
                             return <h2 key={usuario.id}>{usuario.name}</h2>
                         
                     })}
@@ -96,9 +96,14 @@ const TarjetSite = () => {
                         </div>
                         <div className='col-8'>
                             <h5>Correo</h5>
-                            <a href='mailto: correo@correo.com'>
+                            {users.map(usuario => {
+                                if (usuario.id == idUsuario) 
+                                    return <a href={'mailto:'+usuario.email} key={usuario.id}>{usuario.email}</a>
+                                
+                            })}
+                            {/* <a href='mailto: correo@correo.com'>
                                 correo@correo.com
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 
