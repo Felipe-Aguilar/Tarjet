@@ -80,7 +80,7 @@ const MenuContenedor = styled.div`
     }
 
     .sesion{
-        height: 310px;
+        height: 315px;
         a{
             padding: 7px 15px;
             background: #fff;
