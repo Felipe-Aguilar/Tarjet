@@ -99,7 +99,7 @@ const Encabezado = styled.div`
 
 const NavMenu = styled.div`
     .contenedorMenu{
-        background: #fff;
+        background: red;
         width: 30%;
         position: absolute;
         right: 0;
@@ -108,7 +108,8 @@ const NavMenu = styled.div`
         
         @media screen and (max-width: 575px){
             width: 100%;
-            height: 85%;
+            /* height: 85%; */
+            height: 100vh;
         }
     
         a{
