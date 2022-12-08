@@ -109,7 +109,7 @@ const NavMenu = styled.div`
         @media screen and (max-width: 575px){
             width: 100%;
             /* height: 85%; */
-            height: 100vh;
+            height: 90.5%;
         }
     
         a{
