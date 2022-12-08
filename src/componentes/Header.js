@@ -99,7 +99,7 @@ const Encabezado = styled.div`
 
 const NavMenu = styled.div`
     .contenedorMenu{
-        background: red;
+        background: #fff;
         width: 30%;
         position: absolute;
         right: 0;
