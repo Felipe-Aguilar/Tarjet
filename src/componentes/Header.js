@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import Menu from './Menu';
 
 const Header = () => {
 
@@ -50,11 +51,13 @@ const Header = () => {
                             initial={{opacity: 0, scale:0}}
                             animate={{opacity: 1, scale:1}}
                             exit={{opacity:0, scale:0, x: 200}}
+                            className="contenedorMenu"
                         >
+                            {/* <a href="">Option</a>
                             <a href="">Option</a>
                             <a href="">Option</a>
-                            <a href="">Option</a>
-                            <a href="">Option</a>
+                            <a href="">Option</a> */}
+                            <Menu />
                         </motion.div>
                     </NavMenu>
                 )}
@@ -95,7 +98,7 @@ const Encabezado = styled.div`
 `;
 
 const NavMenu = styled.div`
-    div{
+    .contenedorMenu{
         background: #fff;
         width: 30%;
         position: absolute;
