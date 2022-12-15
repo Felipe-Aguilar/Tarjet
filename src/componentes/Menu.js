@@ -16,6 +16,7 @@ const Menu = ({cambioMenu}) => {
                 </div>
 
                 <div className='links'>
+                    <NavLink to="/">Inicio</NavLink>
                     <NavLink to="/que-es-tarjet" onClick={()=>cambioMenu(true)}>¿Qué es Tarjet?</NavLink>
                     <a href="#">Tienda de Productos</a>
                     <a href="#">Mi Perfil</a>

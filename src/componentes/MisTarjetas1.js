@@ -67,7 +67,7 @@ const MisTarjetasContenedor = styled.div`
         background: #fff;
         border-radius: 20px;
         padding: 10px 30px;
-        height: 310px;
+        height: 315px;
         box-shadow:
         0px 0.1px 2.2px rgba(0, 0, 0, 0.02),
         0px 0.1px 5.3px rgba(0, 0, 0, 0.028),
