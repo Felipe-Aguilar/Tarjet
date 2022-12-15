@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+
 import tarjetaFrente from '../assets/TarjetaFrente.png';
 import tarjetaReverso from '../assets/TarjetaReverso.png';
-import { motion, AnimatePresence, delay } from 'framer-motion';
-import Informacion from './Informacion';
+
+import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 
 const TarjetaVista = () => {
@@ -55,7 +56,56 @@ const TarjetaVista = () => {
                         }
                     </AnimatePresence>
                 </div>
+                
+                {/* <Opciones className='col-11 text-center'>
+                    <div className='row justify-content-around'>
+                        <div className='w-auto'>
+                            <i 
+                                className="bi bi-arrow-repeat"
+                                onClick={() => cambiarReverso(!reverso)}
+                            ></i>
+                            <p>Reverso</p>
+                        </div>
+                        <div className='w-auto'>
+                            { ver ?
+                                <>
+                                    <i 
+                                        className="bi bi-eye-slash"
+                                        onClick={() => cambiarVer(false)}
+                                    ></i>
+                                    <p>Ver/Ocultar</p>
+                                </>
+                            :
+                                <>
+                                    <i 
+                                        className="bi bi-eye"
+                                        onClick={() => cambiarVer(true)}
+                                    ></i>
+                                    <p>Ver/Ocultar</p>
+                                </>
+                            }
+                            
+                        </div>
+                        <div className='w-auto'>
+                            <i 
+                                className="bi bi-share"
+                                onClick={() => cambiarCompartir(!compartir)}
+                            ></i>
+                            <p>Compartir</p>
+                        </div>
+                        <div className='w-auto'>
+                            <i className="bi bi-download"></i>
+                            <p>Guardar</p>
+                        </div>
+                    </div>
+                </Opciones> */}
+
                 <Opciones className='col-11 text-center'>
+                    <div className='row headControl'>
+                        <div className='w-100'>
+                            <h6>Tarjet Control</h6>
+                        </div>
+                    </div>
                     <div className='row justify-content-around'>
                         <div className='w-auto'>
                             <i 
@@ -130,8 +180,6 @@ const TarjetaVista = () => {
                     )}
                 </AnimatePresence>
             </TarjetaVistaContenedor>
-
-            <Informacion />
         </>
     );
 }
@@ -182,6 +230,7 @@ const Opciones = styled.div`
     border-radius: 11px;
     margin-top: 30px;
     padding: 5px 15px;
+    padding-top:0;
     
     @media screen and (max-width: 360px) and (max-height: 800px){
         margin-top: 10px;
@@ -194,6 +243,16 @@ const Opciones = styled.div`
     p{
         margin:0;
         font-size: 13px;
+    }
+
+    .headControl{
+        background: #00aff0;
+        padding: 5px 0;
+        border-radius: 11px 11px 0px 0px;
+        color: #fff;
+        h6{
+            margin:0;
+        }
     }
 `;
 
