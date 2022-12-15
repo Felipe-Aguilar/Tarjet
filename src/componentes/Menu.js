@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Corona from '../assets/corona.svg';
+import { NavLink } from 'react-router-dom';
 
-const Menu = () => {
+const Menu = ({cambioMenu}) => {
+    console.log(cambioMenu);
     return ( 
         <>
             <MenuContenedor className=''>
@@ -14,7 +16,7 @@ const Menu = () => {
                 </div>
 
                 <div className='links'>
-                    <a href="#">¿Qué es Tarjet?</a>
+                    <NavLink to="/que-es-tarjet" onClick={()=>cambioMenu(true)}>¿Qué es Tarjet?</NavLink>
                     <a href="#">Tienda de Productos</a>
                     <a href="#">Mi Perfil</a>
                     <a href="#">Empresas</a>

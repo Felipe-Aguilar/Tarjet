@@ -5,6 +5,8 @@ import TarjetSite from './componentes/TarjetSite';
 import Footer from './componentes/Footer';
 import { Route, Routes } from 'react-router-dom';
 
+import QueEsTarjet from './componentes/QueEsTarjet';
+
 const App = () => {
   return ( 
     <>
@@ -17,7 +19,8 @@ const App = () => {
           <Route path='*' element={<VistaInicio />}/>          
           <Route path='/' element={<VistaInicio />}/>   
 
-          <Route path='/tarjetSite' element={<TarjetSite />}/>          
+          <Route path='/tarjetSite' element={<TarjetSite />}/>
+          <Route path='/que-es-tarjet' element={<QueEsTarjet />}/>
         </Routes>
 
         <Footer />

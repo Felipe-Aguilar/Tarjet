@@ -53,11 +53,7 @@ const Header = () => {
                             exit={{opacity:0, scale:0, x: 200}}
                             className="contenedorMenu"
                         >
-                            {/* <a href="">Option</a>
-                            <a href="">Option</a>
-                            <a href="">Option</a>
-                            <a href="">Option</a> */}
-                            <Menu />
+                            <Menu cambioMenu={cambioMenu}/>
                         </motion.div>
                     </NavMenu>
                 )}

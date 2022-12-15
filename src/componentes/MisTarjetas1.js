@@ -1,59 +1,64 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const MisTarjetas1 = () => {
-    return ( 
+
+    const [vista, cambiarVista] = useState(true);
+
+    return (
+        
         <MisTarjetasContenedor className='row mt-4 justify-content-center'>
-                <div className='col-11 contenedor'>
-                    
-                    <div className='row justify-content-between align-items-center'>
-                        <div className='w-auto'>
-                            <h6>Mis Tarjetas</h6>
-                        </div>
-                        <div className='w-auto menu-circle'>
-                            <NavLink to="*" className='active'>
-                                <i className="bi bi-circle-fill"></i>
-                            </NavLink>
-                            <NavLink to="/Tarjetas2" className='no-active'>
-                                <i className="bi bi-circle-fill"></i>
-                            </NavLink>
-                            <NavLink to="/Tarjetas3" className='no-active'>
-                                <i className="bi bi-circle-fill"></i>
-                            </NavLink>
-                        </div>
+            <div className='col-11 contenedor'>
+                
+                <div className='row justify-content-between align-items-center'>
+                    <div className='w-auto'>
+                        <h6>Mis Tarjetas</h6>
                     </div>
-
-                    <div className='row mt-5 informacion'>
-                        <div className='w-50 left'>
-                            <NavLink to="/Tarjetas2">Automotriz</NavLink>
-                            <NavLink to="/Tarjetas2">Deportes</NavLink>
-                            <NavLink to="/Tarjetas2">Hogar</NavLink>
-                            <NavLink to="/Tarjetas2">Educación</NavLink>
-                        </div>
-                        <div className='w-50 right'>
-                            <NavLink to="/Tarjetas3">Belleza/Estética</NavLink>
-                            <NavLink to="/Tarjetas3">Mascotas</NavLink>
-                            <NavLink to="/Tarjetas3">Insumos Textiles</NavLink>
-                            <NavLink to="/Tarjetas3">Educación</NavLink>
-                        </div>
-                    </div>
-
-                    <div className='row mt-4 buscar'>
-                        <div className='w-auto'>
-                            <h6>Buscar entre mis Tarjet's</h6>
-                            <form>
-                                <input type="search" placeholder='Buscar'/>
-                                <select name='select'>
-                                    <option value="" key="">Nombre</option>
-                                    <option value="" key="">Tipo de Servicio</option>
-                                    <option value="" key="">Empresa / Negocio</option>
-                                </select>
-                            </form>
-                        </div>
+                    <div className='w-auto menu-circle'>
+                        <NavLink to="*" className='active'>
+                            <i className="bi bi-circle-fill"></i>
+                        </NavLink>
+                        <NavLink to="/Tarjetas2" className='no-active'>
+                            <i className="bi bi-circle-fill"></i>
+                        </NavLink>
+                        <NavLink to="/Tarjetas3" className='no-active'>
+                            <i className="bi bi-circle-fill"></i>
+                        </NavLink>
                     </div>
                 </div>
-            </MisTarjetasContenedor>
+
+                <div className='row mt-5 informacion'>
+                    <div className='w-50 left'>
+                        <NavLink to="/Tarjetas2">Automotriz</NavLink>
+                        <NavLink to="/Tarjetas2">Deportes</NavLink>
+                        <NavLink to="/Tarjetas2">Hogar</NavLink>
+                        <NavLink to="/Tarjetas2">Educación</NavLink>
+                    </div>
+                    <div className='w-50 right'>
+                        <NavLink to="/Tarjetas3">Belleza/Estética</NavLink>
+                        <NavLink to="/Tarjetas3">Mascotas</NavLink>
+                        <NavLink to="/Tarjetas3">Insumos Textiles</NavLink>
+                        <NavLink to="/Tarjetas3">Educación</NavLink>
+                    </div>
+                </div>
+
+                <div className='row mt-4 buscar'>
+                    <div className='w-auto'>
+                        <h6>Buscar entre mis Tarjet's</h6>
+                        <form>
+                            <input type="search" placeholder='Buscar'/>
+                            <select name='select'>
+                                <option value="" key="">Nombre</option>
+                                <option value="" key="">Tipo de Servicio</option>
+                                <option value="" key="">Empresa / Negocio</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </MisTarjetasContenedor>
     );
 }
 
