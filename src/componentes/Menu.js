@@ -21,12 +21,20 @@ const Menu = ({cambioMenu}) => {
                     <a href="#">Tienda de Productos</a>
                     <a href="#">Mi Perfil</a>
                     <a href="#">Empresas</a>
+<<<<<<< HEAD
                     <NavLink to="/hazte-premium" onClick={()=>cambioMenu(true)}
+=======
+                    <a href="#" 
+>>>>>>> 480e692823ded9093f98798d62e34c8b5e8f2007
                         className='d-flex align-items-center corona'
                     >
                         Hazte Premium
                         <img src={Corona} alt="Tarjet | Tu tarjeta de presentación Online"/>
+<<<<<<< HEAD
                     </NavLink>
+=======
+                    </a>
+>>>>>>> 480e692823ded9093f98798d62e34c8b5e8f2007
                     <a href="#">Contacto</a>
                 </div>
 
