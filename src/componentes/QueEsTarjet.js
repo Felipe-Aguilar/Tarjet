@@ -5,10 +5,7 @@ import { motion } from 'framer-motion';
 import Tarjetimg from '../assets/tarjetquees.png';
 import QuienesBanner from '../assets/quienesbanner.png';
 import QuienesBanner2 from '../assets/quienesbanner2.png';
-<<<<<<< HEAD
 import bannertarjet from '../assets/tarjetbanner.jpg';
-=======
->>>>>>> 480e692823ded9093f98798d62e34c8b5e8f2007
 
 const QueEsTarjet = () => {
     return ( 
@@ -140,7 +137,6 @@ const QueEsTarjetContenedor = styled.div`
             bottom: 20px;
         }
     }
-<<<<<<< HEAD
 
     .contenedor4{
         img{
@@ -148,8 +144,6 @@ const QueEsTarjetContenedor = styled.div`
             border-radius: 20px;
         }
     }
-=======
->>>>>>> 480e692823ded9093f98798d62e34c8b5e8f2007
 `;
 
 export default QueEsTarjet;

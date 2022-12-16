@@ -6,10 +6,7 @@ import Footer from './componentes/Footer';
 import { Route, Routes } from 'react-router-dom';
 
 import QueEsTarjet from './componentes/QueEsTarjet';
-<<<<<<< HEAD
 import HaztePremium from './componentes/HaztePremium';
-=======
->>>>>>> 480e692823ded9093f98798d62e34c8b5e8f2007
 
 const App = () => {
   return ( 
@@ -25,10 +22,7 @@ const App = () => {
 
           <Route path='/tarjetSite' element={<TarjetSite />}/>
           <Route path='/que-es-tarjet' element={<QueEsTarjet />}/>
-<<<<<<< HEAD
           <Route path='/hazte-premium' element={<HaztePremium />}/>
-=======
->>>>>>> 480e692823ded9093f98798d62e34c8b5e8f2007
         </Routes>
 
         <Footer />
