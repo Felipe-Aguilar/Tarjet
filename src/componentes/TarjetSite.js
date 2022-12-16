@@ -1,25 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import FotoPerfil from '../assets/FotoPerfil.png';
 import Logo from '../assets/LogoOficial.png';
 import FondoPerfil1 from '../assets/FondoPerfil1.png';
 import PerfilPrueba from '../assets/PerfilPrueba.png';
+import { useTransform } from 'framer-motion';
+
 
 const TarjetSite = () => {
+
+    const [users, datoUsuario] = useState([]);
+    const idUsuario = 8;
+
+    const datosUsuarios = async () =>{
+        const data = await fetch("https://jsonplaceholder.typicode.com/users");
+        const usuarios = await data.json();
+
+        datoUsuario(usuarios);
+    }
+
+    useEffect(()=>{
+        datosUsuarios();
+    }, []);
+
     return ( 
         <>
             <HeaderPerfil className='row justify-content-center'>
                 <div className='w-auto text-center'>
-                    {/* <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
-                    <h2>Name</h2>
-                    <p>Profession</p> */}
-
-                    <img src={FondoPerfil1} alt="Tarjet | Tú tarjeta de presentación Online" className='img-fluid'/>
+                    <img src={FotoPerfil} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    {users.map(usuario => {
+                        if (usuario.id == idUsuario) 
+                            return <h2 key={usuario.id}>{usuario.name}</h2>
+                        
+                    })}
+                    <p>Profession</p>
                 </div>
 
                 {/* <div className='row '>
-                    <div>
+                    <div>   
 
                     </div>
                 </div> */}
@@ -77,9 +96,14 @@ const TarjetSite = () => {
                         </div>
                         <div className='col-8'>
                             <h5>Correo</h5>
-                            <a href='mailto: correo@correo.com'>
+                            {users.map(usuario => {
+                                if (usuario.id == idUsuario) 
+                                    return <a href={'mailto:'+usuario.email} key={usuario.id}>{usuario.email}</a>
+                                
+                            })}
+                            {/* <a href='mailto: correo@correo.com'>
                                 correo@correo.com
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 
@@ -156,26 +180,9 @@ const TarjetSite = () => {
 }
 
 const HeaderPerfil = styled.div`
-<<<<<<< HEAD
-    /* background: url(${PerfilPrueba});
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover; */
-
-    height: 180px;
-
-    padding: 0px 0 0 0;
-=======
-    background: url(${PerfilPrueba});
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-
     padding: 24px 0 0 0;
->>>>>>> b879ace453e1e55b3ae5cf3b3d37b1a0e8681a1c
     img{
-        /* width: 70px; */
-        /* width: 100px; */
+        width: 70px;
     }
     h2{
         margin: 0;
