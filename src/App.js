@@ -6,6 +6,7 @@ import Footer from './componentes/Footer';
 import { Route, Routes } from 'react-router-dom';
 
 import QueEsTarjet from './componentes/QueEsTarjet';
+import HaztePremium from './componentes/HaztePremium';
 
 const App = () => {
   return ( 
@@ -21,6 +22,7 @@ const App = () => {
 
           <Route path='/tarjetSite' element={<TarjetSite />}/>
           <Route path='/que-es-tarjet' element={<QueEsTarjet />}/>
+          <Route path='/hazte-premium' element={<HaztePremium />}/>
         </Routes>
 
         <Footer />

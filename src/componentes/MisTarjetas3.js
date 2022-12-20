@@ -6,7 +6,11 @@ import { AnimatePresence, motion } from 'framer-motion';
 const MisTarjetas3 = () => {
     return ( 
         <MisTarjetasContenedor className='row mt-4 justify-content-center'>
-                <div className='col-11 contenedor'>
+                <motion.div 
+                    className='col-11 contenedor'
+                    initial={{opacity:0, x:-20}}
+                    animate={{opacity: 1, x:0}}
+                >
                     
                     <div className='row justify-content-between align-items-center'>
                         <div className='w-auto'>
@@ -43,7 +47,7 @@ const MisTarjetas3 = () => {
                             <NavLink to="/">Sr. Efren Díaz</NavLink>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </MisTarjetasContenedor>
     );
 }

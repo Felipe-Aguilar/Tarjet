@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Tarjetimg from '../assets/tarjetquees.png';
 import QuienesBanner from '../assets/quienesbanner.png';
 import QuienesBanner2 from '../assets/quienesbanner2.png';
+import bannertarjet from '../assets/tarjetbanner.jpg';
 
 const QueEsTarjet = () => {
     return ( 
@@ -27,6 +28,10 @@ const QueEsTarjet = () => {
                         </motion.button>
                     </div>
                 </div>
+            </div>
+
+            <div className='col-11 mt-4 contenedor contenedor4'>
+                <img src={bannertarjet} alt="Tarjet | Tu tarjeta de presentacion Online" />
             </div>
 
             <div className='col-11 mt-4 contenedor contenedor2'>
@@ -130,6 +135,13 @@ const QueEsTarjetContenedor = styled.div`
             color: #fff;
             position: absolute;
             bottom: 20px;
+        }
+    }
+
+    .contenedor4{
+        img{
+            width: 100%;
+            border-radius: 20px;
         }
     }
 `;
