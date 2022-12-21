@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import HaztePremiumBanner from '../assets/haztepremiumbanner.jpg';
+import HaztePremiumBanner from '../assets/haztepremiumbanner.png';
 
 const HaztePremium = () => {
     return ( 
         <HaztePremiumContenedor className='row mt-4 justify-content-center'>
-            <div className='col-11 contenedor  contenedor1'>
+            <div className='col-11 col-md-4 contenedor  contenedor1'>
                 <img src={HaztePremiumBanner} alt="Tarjet | Tu tarjeta de presentación Online" />
                 <div className='info'>
                     <h6>Tu tarjeta de presentación Virtual a otro Nivel.</h6>
@@ -27,7 +27,7 @@ const HaztePremium = () => {
                 </div>
             </div>
 
-            <div className='col-11 mt-4 contenedor contenedor2'>
+            <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor contenedor2'>
                 <h6>Con Tarjet Premium Accede a estas opciones.</h6>
                 <p>
                     - Si deseas que tu Tarjet se vea en una mayor zona Geofráfica o a nivel Nacional, puedes configurarlo en tu cuenta Premium.
@@ -47,9 +47,14 @@ const HaztePremium = () => {
 }
 
 const HaztePremiumContenedor = styled.div`
+    gap: 20px;
+    @media screen and (max-width: 575px){
+        gap: 0;
+    }
     .contenedor{
         background: #fff;
         border-radius: 20px;
+        padding: 0;
     }
     
     .contenedor1{

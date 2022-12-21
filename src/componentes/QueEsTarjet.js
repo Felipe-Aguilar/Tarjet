@@ -10,7 +10,7 @@ import bannertarjet from '../assets/tarjetbanner.jpg';
 const QueEsTarjet = () => {
     return ( 
         <QueEsTarjetContenedor className='row mt-4 justify-content-center'>
-            <div className='col-11 contenedor contenedor1'>
+            <div className='col-11 col-md-4 contenedor contenedor1'>
                 <img src={Tarjetimg} alt="Tarjet | Tu tarjeta de presentación Online" />
                 <div className='w-100 info'>
                     <h2>¿Qué es Tarjet?</h2>
@@ -30,11 +30,11 @@ const QueEsTarjet = () => {
                 </div>
             </div>
 
-            <div className='col-11 mt-4 contenedor contenedor4'>
+            <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor contenedor4'>
                 <img src={bannertarjet} alt="Tarjet | Tu tarjeta de presentacion Online" />
             </div>
 
-            <div className='col-11 mt-4 contenedor contenedor2'>
+            <div className='col-11 col-md-8 mt-4 contenedor contenedor2'>
                 <p className='p1'>
                     <span>Comparte</span> por redes sociales, whatsApp, telegram, SMS.
                 </p>
@@ -43,7 +43,7 @@ const QueEsTarjet = () => {
                 </p>
             </div>
 
-            <div className='col-11 mt-4 contenedor contenedor3'>
+            <div className='col-11 mt-4 col-md-8 contenedor contenedor3'>
                 <p>
                     Puedes solicitar tu código <br/> QR impreso en diferentes <br/> artículos.
                 </p>
@@ -58,6 +58,10 @@ const QueEsTarjet = () => {
 }
 
 const QueEsTarjetContenedor = styled.div`
+    gap: 20px;
+    @media screen and (max-width: 575px){
+        gap: 0;
+    }
     .contenedor{
         border-radius: 20px;
         padding: 0;

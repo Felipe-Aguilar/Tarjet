@@ -8,7 +8,7 @@ const MisTarjetas1 = () => {
     return (
         <MisTarjetasContenedor className='row mt-4 justify-content-center'>
             
-            <motion.div className='col-11 contenedor'
+            <motion.div className='col-11 col-md-8 contenedor'
                 initial={{opacity:0, x:-20}}
                 animate={{opacity: 1, x:0}}
             >
