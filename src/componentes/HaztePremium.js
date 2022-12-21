@@ -6,6 +6,7 @@ import HaztePremiumBanner from '../assets/haztepremiumbanner.png';
 const HaztePremium = () => {
     return ( 
         <HaztePremiumContenedor className='row mt-4 justify-content-center'>
+
             <div className='col-11 col-md-4 contenedor  contenedor1'>
                 <img src={HaztePremiumBanner} alt="Tarjet | Tu tarjeta de presentación Online" />
                 <div className='info'>

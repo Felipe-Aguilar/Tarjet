@@ -6,7 +6,7 @@ import InformacionConSesion from './InformacionConSesion';
 
 const VistaInicio = () => {
 
-    const [sesion, cambioSesion] = useState(false);
+    const [sesion, cambioSesion] = useState(true);
 
     return ( 
         <>
