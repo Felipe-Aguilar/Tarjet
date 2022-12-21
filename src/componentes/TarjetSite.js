@@ -11,7 +11,7 @@ import { useTransform } from 'framer-motion';
 const TarjetSite = () => {
 
     const [users, datoUsuario] = useState([]);
-    const idUsuario = 8;
+    const idUsuario = 1;
 
     const datosUsuarios = async () =>{
         const data = await fetch("https://jsonplaceholder.typicode.com/users");
