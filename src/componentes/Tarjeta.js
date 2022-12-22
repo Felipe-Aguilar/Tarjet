@@ -15,7 +15,7 @@ const TarjetaVista = () => {
 
     return (
         <>
-            <TarjetaVistaContenedor className='row justify-content-center mt-3'>
+            <TarjetaVistaContenedor className='row justify-content-center align-items-md-center mt-3'>
                 <div className="col-12 col-md-4 tarjeta-contenedor">
                     <AnimatePresence>
                         { ver ?
@@ -56,51 +56,8 @@ const TarjetaVista = () => {
                         }
                     </AnimatePresence>
                 </div>
-                
-                {/* <Opciones className='col-11 text-center'>
-                    <div className='row justify-content-around'>
-                        <div className='w-auto'>
-                            <i 
-                                className="bi bi-arrow-repeat"
-                                onClick={() => cambiarReverso(!reverso)}
-                            ></i>
-                            <p>Reverso</p>
-                        </div>
-                        <div className='w-auto'>
-                            { ver ?
-                                <>
-                                    <i 
-                                        className="bi bi-eye-slash"
-                                        onClick={() => cambiarVer(false)}
-                                    ></i>
-                                    <p>Ver/Ocultar</p>
-                                </>
-                            :
-                                <>
-                                    <i 
-                                        className="bi bi-eye"
-                                        onClick={() => cambiarVer(true)}
-                                    ></i>
-                                    <p>Ver/Ocultar</p>
-                                </>
-                            }
-                            
-                        </div>
-                        <div className='w-auto'>
-                            <i 
-                                className="bi bi-share"
-                                onClick={() => cambiarCompartir(!compartir)}
-                            ></i>
-                            <p>Compartir</p>
-                        </div>
-                        <div className='w-auto'>
-                            <i className="bi bi-download"></i>
-                            <p>Guardar</p>
-                        </div>
-                    </div>
-                </Opciones> */}
 
-                <Opciones className='col-11 text-center'>
+                <Opciones className='col-11 col-md-4 text-center'>
                     <div className='row headControl'>
                         <div className='w-100'>
                             <h6>Tarjet Control</h6>
@@ -185,6 +142,10 @@ const TarjetaVista = () => {
 }
 
 const TarjetaVistaContenedor = styled.div`
+    gap: 20px;
+    @media screen and (max-width: 575px){
+        gap: 0; 
+    }
     div{
         position: static;
     }
@@ -205,7 +166,7 @@ const TarjetaVistaContenedor = styled.div`
         }
     }
     .tarjeta-contenedor{
-        height: 250px;
+        height: 300px;
         @media screen and (max-width: 575px){
             height: 198px;
         }
@@ -228,17 +189,24 @@ const TarjetaVistaContenedor = styled.div`
 const Opciones = styled.div`
     background: #fff;
     border-radius: 11px;
-    margin-top: 30px;
     padding: 5px 15px;
     padding-top:0;
+    height: 100px;
     
     @media screen and (max-width: 360px) and (max-height: 800px){
         margin-top: 10px;
+    }
+    @media screen and (max-width: 575px){
+        height: auto;
+        margin-top: 30px;
+        padding: 5px 15px;
+        padding-top:0;
     }
 
     i{
         font-size: 25px;
         padding: 0;
+        cursor: pointer;
     }
     p{
         margin:0;

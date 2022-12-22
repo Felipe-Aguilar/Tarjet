@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import Menu from './Menu';
+import MenuDesktop from './MenuDesktop';
 
 const Header = () => {
 
@@ -13,7 +14,7 @@ const Header = () => {
                 <div className='w-auto'>
                     <h1>Tarjet.</h1>
                 </div>
-                <div className='w-auto'>
+                <div className='w-auto d-block d-md-none'>
                     { menu ?
                         <motion.div 
                             className='Icon'
@@ -42,6 +43,9 @@ const Header = () => {
                             </button>
                         </motion.div>
                     }
+                </div>
+                <div className='w-auto d-none d-md-block'>
+                    <MenuDesktop />
                 </div>
             </Encabezado>
             <AnimatePresence>
