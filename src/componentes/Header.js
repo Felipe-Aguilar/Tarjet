@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Menu from './Menu';
 import MenuDesktop from './MenuDesktop';
 
+import TarjetNegro from '../assets/TarjetNegro.png';
+
 const Header = () => {
 
     const [menu, cambioMenu] = useState(true);
@@ -12,7 +14,8 @@ const Header = () => {
         <>
             <Encabezado className='row m-0 justify-content-between align-items-center'>
                 <div className='w-auto'>
-                    <h1>Tarjet.</h1>
+                    {/* <h1>Tarjet.</h1> */}
+                    <img src={TarjetNegro} alt="Tarjet | Tu tarjeta de presentación Online"/>
                 </div>
                 <div className='w-auto d-block d-md-none'>
                     { menu ?
@@ -73,6 +76,10 @@ const Encabezado = styled.div`
     /* position: fixed;
     width: 100%; */
     /* z-index: 1; */
+
+    img{
+        width: 120px;
+    }
 
     h1{
         font-weight: bold;
