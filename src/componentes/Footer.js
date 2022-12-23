@@ -11,7 +11,7 @@ const Footer = () => {
                 <img src={TarjetBlanco} alt="Tarjet | Tu tarjeta de presentación Online" />
             </div>
 
-            <div className='col-12 links d-none d-md-block'>
+            <div className='col-12 links'>
                 <a href="">Aviso de Privacidad</a>
                 <a href="">Tienda</a>
                 <a href="">Contáctanos</a>
@@ -20,16 +20,16 @@ const Footer = () => {
                 <a href="">Preguntas Frecuentes</a>
             </div>
 
-            <div className='col-6 d-block d-md-none links-mobile'>
-                <a href="">Aviso de Privacidad</a>
-                <a href="">Tienda</a>
-                <a href="">Contáctanos</a>
-            </div>
-            <div className='col-6 d-block d-md-none links-mobile'>
-                <a href="">Registro</a>
-                <a href="">Empresas</a>
-                <a href="">Preguntas Frecuentes</a>
-            </div>
+                <div className='col-6 d-block d-md-none links-mobile'>
+                    <a href="">Aviso de Privacidad</a>
+                    <a href="">Tienda</a>
+                    <a href="">Contáctanos</a>
+                </div>
+                <div className='col-6 d-block d-md-none links-mobile'>
+                    <a href="">Registro</a>
+                    <a href="">Empresas</a>
+                    <a href="">Preguntas Frecuentes</a>
+                </div>
 
             <div className='w-auto p-3 text-center'>
                 <p>
@@ -56,9 +56,13 @@ const FooterContenedor = styled.footer`
 
     .links{
         display: flex;
-        gap: 20px;
         justify-content: center;
         margin-top: 20px;
+        gap: 20px;
+
+        @media screen and (max-width: 575px){
+            display: none;
+        }
         
         a{
             color:#fff;
