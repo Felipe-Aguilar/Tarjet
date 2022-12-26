@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import Menu from './Menu';
+import MenuDesktop from './MenuDesktop';
+
+import TarjetNegro from '../assets/TarjetNegro.png';
 
 const Header = () => {
 
@@ -11,9 +14,10 @@ const Header = () => {
         <>
             <Encabezado className='row m-0 justify-content-between align-items-center'>
                 <div className='w-auto'>
-                    <h1>Tarjet.</h1>
+                    {/* <h1>Tarjet.</h1> */}
+                    <img src={TarjetNegro} alt="Tarjet | Tu tarjeta de presentación Online"/>
                 </div>
-                <div className='w-auto'>
+                <div className='w-auto d-block d-md-none'>
                     { menu ?
                         <motion.div 
                             className='Icon'
@@ -43,6 +47,9 @@ const Header = () => {
                         </motion.div>
                     }
                 </div>
+                <div className='w-auto d-none d-md-block'>
+                    <MenuDesktop />
+                </div>
             </Encabezado>
             <AnimatePresence>
                 {!menu &&(
@@ -69,6 +76,10 @@ const Encabezado = styled.div`
     /* position: fixed;
     width: 100%; */
     /* z-index: 1; */
+
+    img{
+        width: 120px;
+    }
 
     h1{
         font-weight: bold;

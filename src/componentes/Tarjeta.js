@@ -15,7 +15,7 @@ const TarjetaVista = () => {
 
     return (
         <>
-            <TarjetaVistaContenedor className='row justify-content-center mt-3'>
+            <TarjetaVistaContenedor className='row justify-content-center align-items-md-center mt-3'>
                 <div className="col-12 col-md-4 tarjeta-contenedor">
                     <AnimatePresence>
                         { ver ?
@@ -166,7 +166,7 @@ const TarjetaVistaContenedor = styled.div`
         }
     }
     .tarjeta-contenedor{
-        height: 250px;
+        height: 300px;
         @media screen and (max-width: 575px){
             height: 198px;
         }
