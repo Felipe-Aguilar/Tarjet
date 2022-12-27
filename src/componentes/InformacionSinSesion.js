@@ -22,16 +22,24 @@ const Informacion = () => {
             </div>
 
             <InformacionContenedor3 className='row mt-4 justify-content-center'>
-                <div className='col-11 col-md-4 contenedor'>
+                <div className='col-11 col-md-4 contenedor personas'>
                     <img src={Banner3} 
                         alt="Tarjet | Tú tarjeta de presentación Online" 
                         className='img-fluid'
                     />
+                    <p>
+                        Y compartir la información de lo que haces, <span>a todo el mundo.</span>
+                    </p>
+                    <motion.button
+                        whileTap={{scale: 1.4}}
+                    >
+                        Regístrate <i className="bi bi-arrow-right"></i>
+                    </motion.button>
                 </div>
 
                 <div className='col-11 col-md-4 contenedor contenedor2 mt-4 mt-md-0'>
                     <h5>Crea tu Tarjet Gratis.</h5>
-                    <p>Elige de nuestra galería el diseño que más te guste para tu <span>Tarjet.</span></p>
+                    <p>Elige de nuestra galería el diseño que más te guste.</p>
                     <motion.img 
                         src={Promo2} 
                         alt="Tarjet | Tu tarjeta de presentación Online" 
@@ -349,6 +357,17 @@ const InformacionContenedor3 = styled.div`
             }
         }
     }
+
+    .personas{
+        p{
+            margin-bottom: 80px;
+        }
+        button{
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+        }
+    }
     .contenedor2{
         padding: 30px 30px;
         background: #f58634;
@@ -357,15 +376,14 @@ const InformacionContenedor3 = styled.div`
         }
         img{
             margin-top: 30px;
+            @media screen and (max-width: 575px){
+                margin-bottom: 60px;
+            }
         }
         button{
             position: absolute;
-            bottom: 15px;
-            right: 15px;
-            @media screen and (max-width: 575px){
-                position: relative;
-                float: right;
-            }
+            bottom: 30px;
+            right: 30px;
         }
     }
 `;
