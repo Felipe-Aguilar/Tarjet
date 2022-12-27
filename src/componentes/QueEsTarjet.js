@@ -26,7 +26,11 @@ const QueEsTarjet = () => {
 
             <CollageCuerpo className='row mt-3 justify-content-center'>
                 <div className='col-11'>
-                    <img src={collage} alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid'/>
+                    <img 
+                        src={collage} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid'
+                    />
+                        
                 </div>
             </CollageCuerpo>
 
@@ -45,7 +49,14 @@ const QueEsTarjet = () => {
                     <p>
                         podrán compartir su información y ser contratados.
                     </p>
-                    <img src={mundo} alt="Tarjet | Tu tarjeta de presentación online" />
+                    <motion.img 
+                        src={mundo} 
+                        alt="Tarjet | Tu tarjeta de presentación online" 
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale:[1,1.1,1]}}
+                        transition={{ease:'easeOut'}}
+                        viewport={{once:true}}
+                    />
                 </div>
 
                 <div className='col-11 mt-4 mt-md-0 col-md-4 contenedor corazon'>
@@ -58,7 +69,14 @@ const QueEsTarjet = () => {
                     <p>
                         o a nivel nacional con nuestra opción Premium
                     </p>
-                    <img src={corazon} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={corazon} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        initial={{scale:0}}
+                        whileInView={{scale:1}}
+                        transition={{delay: 0.4}}
+                        viewport={{once: true}}
+                    />
                     <p className='w-100 float-right text-right'>
                         <span>I love Tarjet</span>
                     </p>
@@ -77,7 +95,16 @@ const QueEsTarjet = () => {
                     <p>
                         Tal como se hacia <span>antes</span> con las tarjetas convencionales.
                     </p>
-                    <img src={tarjeteroFisico} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={tarjeteroFisico} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        animate={{y:[-20,0]}}
+                        transition={{
+                            repeat: Infinity,
+                            repeatType: 'reverse',
+                            repeatDelay: 1.7
+                        }}
+                    />
                 </div>
 
                 <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor hoy'>
@@ -87,7 +114,15 @@ const QueEsTarjet = () => {
                     <p>
                         ser parte de esta gran red!
                     </p>
-                    <img src={tarjetFlecha} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={tarjetFlecha} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+
+                        initial={{opacity:0}}
+                        whileInView={{opacity:1}}
+                        transition={{delay: 1.1}}
+                        viewport={{once: true}}
+                    />
                 </div>
             </InfoContenedores2>
 
@@ -96,7 +131,13 @@ const QueEsTarjet = () => {
                     <p>
                         Las empresas y corporativos también pueden pertenecer a la red de Tarjet, de esa manera todos se integran al tarjetero virtual y podrán ser encontrados por miles de personas.
                     </p>
-                    <img src={esferas} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={esferas} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        initial={{scale:0}}
+                        whileInView={{scale: [1,1.1,1]}}
+                        viewport={{once: true}}
+                    />
                     <motion.button
                         whileTap={{scale: 1.4}}
                     >
@@ -115,7 +156,13 @@ const QueEsTarjet = () => {
                     >
                         Solo Regístrate <i className="bi bi-arrow-right"></i>
                     </motion.button>
-                    <img src={flecha} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={flecha} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        initial={{opacity:0}}
+                        whileInView={{opacity: [1,0,1,0,1]}}
+                        viewport={{once:true}}
+                    />
                 </div>
             </CrearContenedor>
 
