@@ -15,7 +15,7 @@ const TarjetaVista = () => {
 
     return (
         <>
-            <TarjetaVistaContenedor className='row justify-content-center align-items-md-center mt-3'>
+            <TarjetaVistaContenedor className='row justify-content-center align-items-md-center'>
                 <div className="col-12 col-md-4 tarjeta-contenedor">
                     <AnimatePresence>
                         { ver ?
@@ -142,6 +142,7 @@ const TarjetaVista = () => {
 }
 
 const TarjetaVistaContenedor = styled.div`
+    margin-top: 6rem;
     gap: 20px;
     @media screen and (max-width: 575px){
         gap: 0; 
@@ -193,12 +194,9 @@ const Opciones = styled.div`
     padding-top:0;
     height: 100px;
     
-    @media screen and (max-width: 360px) and (max-height: 800px){
-        margin-top: 10px;
-    }
     @media screen and (max-width: 575px){
         height: auto;
-        margin-top: 30px;
+        margin-top: 1rem;
         padding: 5px 15px;
         padding-top:0;
     }

@@ -62,7 +62,7 @@ const QueEsTarjet = () => {
 
                 <div className='col-11 mt-4 mt-md-0 col-md-4 contenedor corazon'>
                     <p>
-                        Puedes crear tu tarjeta virtual y dar a conocer tus servicios o productos a nivel local. 
+                        Puedes crear tu tarjeta virtual y dar a conocer tus servicios o productos a nivel local.
                     </p>
                     <p className='text-right'>
                         <span>Sin costo!</span>
@@ -76,8 +76,7 @@ const QueEsTarjet = () => {
                         initial={{scale:0}}
                         whileInView={{scale:1}}
                         transition={{delay: 0.4}}
-                        viewport={{once: true}}
-                        whileTap={{x:[-10,0,10,0]}}
+                        whileTap={{rotate: 90, scale: 0.75}}
                     />
                     <p className='w-100 float-right text-right'>
                         <span>I love Tarjet</span>

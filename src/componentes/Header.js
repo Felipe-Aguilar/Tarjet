@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 import Menu from './Menu';
 import MenuDesktop from './MenuDesktop';
 
@@ -15,7 +16,9 @@ const Header = () => {
             <Encabezado className='row m-0 justify-content-between justify-content-md-around align-items-center'>
                 <div className='w-auto'>
                     {/* <h1>Tarjet.</h1> */}
-                    <img src={TarjetNegro} alt="Tarjet | Tu tarjeta de presentación Online"/>
+                    <NavLink to="/">
+                        <img src={TarjetNegro} alt="Tarjet | Tu tarjeta de presentación Online" onClick={()=> cambioMenu(true)}/>
+                    </NavLink>
                 </div>
                 <div className='w-auto d-block d-md-none'>
                     { menu ?
@@ -70,11 +73,16 @@ const Header = () => {
 }
 
 const Encabezado = styled.div`
-    padding: 5px 5px;
+    padding: 15px 100px;
     backdrop-filter: blur(16px);
     background-color: rgba(234, 237, 240, 0.8);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgb(223, 227, 231);
     @media screen and (max-width: 575px){
-        padding: 5px 15px;
+        padding: 13px 15px;
     }
 
     img{
@@ -108,8 +116,10 @@ const NavMenu = styled.div`
     .contenedorMenu{
         background: #fff;
         width: 30%;
-        position: absolute;
-        right: 0;
+        /* position: absolute;
+        right: 0; */
+        position: fixed;
+        top: 60px;
         padding: 20px;
         z-index: 1;
         
