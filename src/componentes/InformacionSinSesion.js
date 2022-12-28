@@ -189,7 +189,13 @@ const Informacion = () => {
                             Son la mejor forma de llegar a más Clientes
                         </p>
                     </div>
-                    <img src={TarjetaGratis} alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid' />
+                    <motion.img 
+                        src={TarjetaGratis} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid' 
+                        initial={{scale:0, x:-10}}
+                        whileInView={{x:0 , scale: 1}}
+                        viewport={{once:true}}
+                    />
                     <div className='gratisInfo'>
                         <motion.button
                             whileTap={{scale: 1.4}}

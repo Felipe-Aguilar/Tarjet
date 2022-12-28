@@ -17,7 +17,7 @@ import flecha from '../assets/flecha.png';
 const QueEsTarjet = () => {
     return (
         <>
-            <div className='row mt-4 justify-content-center'>
+            <div className='row justify-content-center' style={{marginTop: '6rem'}}>
                 <div className='col-12 text-center'>
                     <h3>¿Qué es Tarjet?</h3>
                     <h6>Una iniciativa creada para personas que mueven al mundo.</h6>

@@ -167,7 +167,7 @@ const TarjetaVistaContenedor = styled.div`
         }
     }
     .tarjeta-contenedor{
-        height: 300px;
+        /* height: 300px; */
         @media screen and (max-width: 575px){
             height: 198px;
         }
@@ -196,7 +196,7 @@ const Opciones = styled.div`
     
     @media screen and (max-width: 575px){
         height: auto;
-        margin-top: 1rem;
+        margin-top: 1.3rem;
         padding: 5px 15px;
         padding-top:0;
     }

@@ -180,6 +180,7 @@ const TarjetSite = () => {
 }
 
 const HeaderPerfil = styled.div`
+    margin-top: 6rem;
     padding: 24px 0 0 0;
     img{
         width: 70px;
