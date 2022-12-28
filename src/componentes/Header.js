@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <>
-            <Encabezado className='row m-0 justify-content-between align-items-center'>
+            <Encabezado className='row m-0 justify-content-between justify-content-md-around align-items-center'>
                 <div className='w-auto'>
                     {/* <h1>Tarjet.</h1> */}
                     <img src={TarjetNegro} alt="Tarjet | Tu tarjeta de presentación Online"/>
@@ -70,12 +70,12 @@ const Header = () => {
 }
 
 const Encabezado = styled.div`
-    padding: 5px 15px;
+    padding: 5px 5px;
     backdrop-filter: blur(16px);
     background-color: rgba(234, 237, 240, 0.8);
-    /* position: fixed;
-    width: 100%; */
-    /* z-index: 1; */
+    @media screen and (max-width: 575px){
+        padding: 5px 15px;
+    }
 
     img{
         width: 120px;

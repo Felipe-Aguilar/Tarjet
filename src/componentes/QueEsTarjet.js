@@ -56,6 +56,7 @@ const QueEsTarjet = () => {
                         whileInView={{opacity:1, scale:[1,1.1,1]}}
                         transition={{ease:'easeOut'}}
                         viewport={{once:true}}
+                        whileTap={{scale:1}}
                     />
                 </div>
 
@@ -76,6 +77,7 @@ const QueEsTarjet = () => {
                         whileInView={{scale:1}}
                         transition={{delay: 0.4}}
                         viewport={{once: true}}
+                        whileTap={{x:[-10,0,10,0]}}
                     />
                     <p className='w-100 float-right text-right'>
                         <span>I love Tarjet</span>
@@ -98,12 +100,13 @@ const QueEsTarjet = () => {
                     <motion.img 
                         src={tarjeteroFisico} 
                         alt="Tarjet | Tu tarjeta de presentación Online" 
-                        animate={{y:[-20,0]}}
+                        whileInView={{y:[-20,0]}}
                         transition={{
                             repeat: Infinity,
                             repeatType: 'reverse',
                             repeatDelay: 1.7
                         }}
+                        viewport={{once:true}}
                     />
                 </div>
 
@@ -137,6 +140,7 @@ const QueEsTarjet = () => {
                         initial={{scale:0}}
                         whileInView={{scale: [1,1.1,1]}}
                         viewport={{once: true}}
+                        whileTap={{scale:1}}
                     />
                     <motion.button
                         whileTap={{scale: 1.4}}
@@ -162,6 +166,7 @@ const QueEsTarjet = () => {
                         initial={{opacity:0}}
                         whileInView={{opacity: [1,0,1,0,1]}}
                         viewport={{once:true}}
+                        whileTap={{opacity: [1,0,1,0,1]}}
                     />
                 </div>
             </CrearContenedor>
