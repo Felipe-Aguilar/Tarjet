@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import HaztePremiumBanner from '../assets/haztepremiumbanner.png';
 import BannerPremium1 from '../assets/BannerPremium1.png';
 import BannerPremium2 from '../assets/BannerPremium2.png';
 import BannerPremium3 from '../assets/BannerPremium3.png';
@@ -57,7 +56,15 @@ const HaztePremium = () => {
                     <p>
                         Elije <span>diseños</span> exclusivos de Tarjet y TarjetSite
                     </p>
-                    <img src={PersonaMovimiento} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={PersonaMovimiento} 
+                        alt="Tarjet | Tu tarjeta de presentación Online"
+
+                        whileInView={{rotate: [0, 5,-5,0]}}
+                        // whileInView={{scale: [1,1.1,1]}}
+                        // whileInView={{x:[0,5,-5,0]}}
+                        transition={{repeat: Infinity, duration: 2}}
+                    />
                     <p className='float-left'>
                         incluso con movimiento
                     </p>
@@ -67,7 +74,13 @@ const HaztePremium = () => {
                     <p>
                         <span>TarjetSite es Gratis, pero con <span>Premium</span> podrás Subir tu fotografía con un diseño genial.</span>
                     </p>
-                    <img src={ChicaDatos} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={ChicaDatos} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        initial={{scale:0}}
+                        whileInView={{scale:1}}
+                        transition={{delay:1}}
+                    />
                 </div>
             </DiseñosTarjet>
 
@@ -80,7 +93,14 @@ const HaztePremium = () => {
                     <p className='mt-4'>
                         Aquí tu logotipo
                     </p>
-                    <img src={TarjetaPremium} alt="Tarjet | Tu tarjeta de presentación Online"/>
+                    <motion.img 
+                        src={TarjetaPremium} 
+                        alt="Tarjet | Tu tarjeta de presentación Online"
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale:[1,1.1,1]}}
+                        whileTap={{scale: 1}}
+                        viewport={{once:true}}
+                    />
                 </div>
             </Logotipo>
 
@@ -97,14 +117,27 @@ const HaztePremium = () => {
                     <p>
                         Con <span>Premium</span> no existen límites ya que las personas podrán encontrar tus servicios en un rango mayor. 
                     </p>
-                    <img src={Radar} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={Radar} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        initial={{opacity:0}}
+                        whileInView={{opacity: 1}}
+                        whileTap={{x:-20}}
+                    />
                 </div>
 
                 <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor configura'>
                     <p>
                         Configura el rango en el que deseas ser localizado, incluso a nivel Nacional y atrearás y más <span>clientes</span>
                     </p>
-                    <img src={PersonasMundo} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={PersonasMundo} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale:[1,1.1,1]}}
+                        whileTap={{scale:1}}
+                        viewport={{once:true}}
+                    />
                 </div>
             </PremiumConfigura>
 
@@ -120,14 +153,28 @@ const HaztePremium = () => {
                     <p>
                         Con <span>Premium podrás subir hasta 10 imágenes.</span>
                     </p>
-                    <img src={Tarjetas} alt="Tarjet | Tu tarjeta de presentación Online"/>
+                    <motion.img 
+                        src={Tarjetas} 
+                        alt="Tarjet | Tu tarjeta de presentación Online"
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale:[1,1.1,1]}}
+                        whileTap={{scale:1}}
+                        viewport={{once:true}}
+                    />
                 </div>
 
                 <div className='col-11 col-md-4 contenedor empresa'>
                     <p>
                         Si tienes una empresa o negocio con 2 o más participantes, visita nuestro apartado empresas o contáctanos. 
                     </p>
-                    <img src={Restaurante} alt="Tarjet | Tu tarjeta de presentación Online" />
+                    <motion.img 
+                        src={Restaurante} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" 
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale:[1,1.1,1]}}
+                        whileTap={{scale:1}}
+                        viewport={{once:true}}
+                    />
                     <motion.button
                         whileTap={{scale: 1.4}}
                     >
@@ -136,45 +183,6 @@ const HaztePremium = () => {
                 </div>
             </TarjetEmpresa>
 
-            {/* <HaztePremiumContenedor className='row mt-4 justify-content-center'>
-
-                <div className='col-11 col-md-4 contenedor  contenedor1'>
-                    <img src={HaztePremiumBanner} alt="Tarjet | Tu tarjeta de presentación Online" />
-                    <div className='info'>
-                        <h6>Tu tarjeta de presentación Virtual a otro Nivel.</h6>
-                        <p className='mensuales'>
-                            <span>Por sólo 39 mxn <br/> mensuales.</span>
-                        </p>
-                        <p className='diferencia'>
-                            Marca la Diferencia frente a tus competidores. <br/>
-                            Dándo un toque único a tu tarjeta virtual.
-                        </p>
-                        <p className='elije'>
-                            Elije uno de los <span>diseños</span> <br/>
-                            exclusivos que tenemos para ti. 
-                        </p>
-                        <p className='elije'>
-                            Además podrás subir tu fotografía en <span>TarjetSite</span>, el micrositio en dónde describesmás de tus servicios.
-                        </p>
-                    </div>
-                </div>
-
-                <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor contenedor2'>
-                    <h6>Con Tarjet Premium Accede a estas opciones.</h6>
-                    <p>
-                        - Si deseas que tu Tarjet se vea en una mayor zona Geofráfica o a nivel Nacional, puedes configurarlo en tu cuenta Premium.
-                    </p>
-                    <p>
-                        - Agrega el Logo de tu empresa o negocio, en tu Tarjet y en tu TarjetSite.
-                    </p>
-                    <p>
-                        - Agrega tu Fotografía en tu TarjetSite.
-                    </p>
-                    <p>
-                        - Al contratar por un año recibe gratis el diseño de tu Tarjet Impreso en PVC tu código QR para compartir.
-                    </p>
-                </div>
-            </HaztePremiumContenedor> */}
         </>
 
     );

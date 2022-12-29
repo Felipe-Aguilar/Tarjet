@@ -352,7 +352,7 @@ const InfoContenedores = styled.div`
     .corazon{
         background: #ed2f59;
         img{
-            width: 50%;
+            width: 60%;
             float: right;
         }
     }
