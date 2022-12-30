@@ -7,6 +7,12 @@ import tarjetaReverso from '../assets/TarjetaReverso.png';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 
+import iconoFlechas from '../assets/iconoFlechas.png';
+import iconoOjo from '../assets/iconoOjo.png';
+import iconoCompartir from '../assets/iconoCompartir.png';
+import iconoGuardar from '../assets/iconoGuardar.png';
+
+
 const TarjetaVista = () => {
 
     const [ver, cambiarVer] = useState(true);
@@ -57,7 +63,7 @@ const TarjetaVista = () => {
                     </AnimatePresence>
                 </div>
 
-                <Opciones className='col-11 col-md-4 text-center'>
+                {/* <Opciones className='col-11 col-md-4 text-center'>
                     <div className='row headControl'>
                         <div className='w-100'>
                             <h6>Tarjet Control</h6>
@@ -103,7 +109,45 @@ const TarjetaVista = () => {
                             <p>Guardar</p>
                         </div>
                     </div>
-                </Opciones>
+                </Opciones> */}
+
+                <Opciones2 className='col-11 col-md-4 text-center mt-4 mt-md-0'>
+                    <h6>¿Qué deseas hacer con tu Tarjeta?</h6>
+                    <div className='contenedor'>
+                        <div className='header'>
+                            <h6>Tarjet Control</h6>
+                        </div>
+                        <div className='cuerpo d-flex justify-content-between'>
+                            <div>
+                                <img src={iconoFlechas} className="img-fluid"/>
+                            </div>
+                            <div>
+                                <img src={iconoOjo} className="img-fluid"/>
+                            </div>
+                            <div>
+                                <img src={iconoCompartir} className="img-fluid"/>
+                            </div>
+                            <div>
+                                <img src={iconoGuardar} className="img-fluid"/>
+                            </div>
+                        </div>
+                        <div className='footer d-flex justify-content-between text-center'>
+                            <div>
+                                <p>Reverso</p>
+                            </div>
+                            <div>
+                                <p>Ver/Ocultar</p>
+                            </div>
+                            <div>
+                                <p>Compartir</p>
+                            </div>
+                            <div>
+                                <p>Guardar</p>
+                            </div>
+                        </div>
+                    </div>
+                </Opciones2>
+
                 <AnimatePresence>
                     { compartir && (
                         <motion.div 
@@ -235,5 +279,59 @@ const Opciones = styled.div`
 //         color: #000;
 //     }
 // `;
+
+const Opciones2 = styled.div`
+    background: #aed7ca;
+    padding: 20px;
+    border-radius: 11px;
+    color: #fff;
+
+    h6{
+        color: #007f5b;
+    }
+
+    .contenedor{
+        border-radius: 11px;
+        width: 90%;
+        margin: auto;
+        @media screen and (max-width: 575px){
+            width: 100%;
+        }
+        .header{
+            background: #007f5b;
+            padding: 7px;
+            border-radius: 11px 11px 0 0;
+            h6{
+                color:#fff;
+                margin: 0;
+            }
+        }
+        .cuerpo{
+            background: #43af8d;
+            padding: 5px 0;
+            div{
+                img{
+                    box-shadow: none;
+                    width: 50%;
+                }
+            }
+        }
+        .footer{
+            background: #007f5b;
+            padding: 5px 10px;
+            border-radius: 0 0 11px 11px;
+            @media screen and (max-width: 575px){
+                padding: 5px;
+            }
+            div{
+                /* background-color: red; */
+            }
+            p{
+                font-size: 15px;
+                margin: 0;
+            }
+        }
+    }
+`;
 
 export default TarjetaVista;
