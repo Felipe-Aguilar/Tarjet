@@ -12,7 +12,7 @@ import corazon from '../assets/corazon.png';
 import tarjeteroFisico from '../assets/tarjeteroFisico.png';
 import tarjetFlecha from '../assets/tarjetFlecha.png';
 import esferas from '../assets/esferas.png';
-import flecha from '../assets/flecha.png';
+import mujer from '../assets/mujer.png';
 
 const QueEsTarjet = () => {
     return (
@@ -160,12 +160,12 @@ const QueEsTarjet = () => {
                         Solo Regístrate <i className="bi bi-arrow-right"></i>
                     </motion.button>
                     <motion.img 
-                        src={flecha} 
+                        src={mujer} 
                         alt="Tarjet | Tu tarjeta de presentación Online" 
-                        initial={{opacity:0}}
-                        whileInView={{opacity: [1,0,1,0,1]}}
+                        initial={{opacity:0, scale: 0}}
+                        whileInView={{opacity: 1, scale: [1,1.1,1]}}
                         viewport={{once:true}}
-                        whileTap={{opacity: [1,0,1,0,1]}}
+                        whileTap={{scale: 1}}
                     />
                 </div>
             </CrearContenedor>
