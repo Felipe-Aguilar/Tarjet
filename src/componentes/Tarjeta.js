@@ -323,10 +323,10 @@ const Opciones2 = styled.div`
         }
         .footer{
             background: #007f5b;
-            padding: 5px 10px;
+            padding: 5px 25px;
             border-radius: 0 0 11px 11px;
             @media screen and (max-width: 575px){
-                padding: 5px;
+                padding: 5px 20px;
             }
             div{
                 /* background-color: red; */
