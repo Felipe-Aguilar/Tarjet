@@ -444,11 +444,11 @@ const CrearContenedor = styled.div`
     .contenedor{
         border-radius: 20px;
         padding: 30px;
-        background: #ed3237;
-        color: #fff;
+        background: #fff;
+        color: #000;
 
         img{
-            width: 50%;
+            width: 35%;
             float: right;
             @media screen and (max-width: 575px){
                 width: 80%;

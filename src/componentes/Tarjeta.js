@@ -198,13 +198,11 @@ const TarjetaVistaContenedor = styled.div`
         width: 100%;
         border-radius: 11px;
         box-shadow:
-        0px 0px 1.9px rgba(0, 0, 0, 0.041),
-        0px 0px 4.3px rgba(0, 0, 0, 0.06),
-        0px 0px 7.7px rgba(0, 0, 0, 0.074),
-        0px 0px 12.8px rgba(0, 0, 0, 0.086),
-        0px 0px 21.2px rgba(0, 0, 0, 0.1),
-        0px 0px 37px rgba(0, 0, 0, 0.119),
-        0px 0px 80px rgba(0, 0, 0, 0.16)
+        0px 0px 2.7px rgba(0, 0, 0, 0.022),
+        0px 0px 6.9px rgba(0, 0, 0, 0.031),
+        0px 0px 14.2px rgba(0, 0, 0, 0.039),
+        0px 0px 29.2px rgba(0, 0, 0, 0.048),
+        0px 0px 80px rgba(0, 0, 0, 0.07)
         ;
         @media screen and (max-width: 575px){
             width: 100%;
