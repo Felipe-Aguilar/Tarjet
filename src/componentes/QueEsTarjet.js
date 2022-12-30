@@ -25,10 +25,10 @@ const QueEsTarjet = () => {
             </div>
 
             <CollageCuerpo className='row mt-3 justify-content-center'>
-                <div className='col-11'>
+                <div className='col-12 col-md-11 p-0'>
                     <img 
                         src={collage} 
-                        alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid'
+                        alt="Tarjet | Tu tarjeta de presentación Online"
                     />
                         
                 </div>
