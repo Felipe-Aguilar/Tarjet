@@ -344,15 +344,19 @@ const InfoContenedores = styled.div`
     .mundo{
         background: #12a3d9;
         img{
-            width: 95%;
+            width: 100%;
             float: right;
+            
+            @media screen and (max-width: 575px){
+            width: 110%;
+        }
         }
     }
 
     .corazon{
         background: #ed2f59;
         img{
-            width: 60%;
+            width: 80%;
             float: right;
         }
     }
