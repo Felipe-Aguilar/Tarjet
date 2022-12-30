@@ -281,10 +281,15 @@ const Opciones = styled.div`
 // `;
 
 const Opciones2 = styled.div`
-    background: #aed7ca;
+    /* background: #aed7ca; */
+    background: #c1e1d7;
     padding: 20px;
     border-radius: 11px;
     color: #fff;
+    
+    @media screen and (max-width: 575px){
+        padding: 20px 10px;
+    }
 
     h6{
         color: #007f5b;
