@@ -133,7 +133,7 @@ const TarjetaVista = () => {
                         </div>
                         <div className='footer d-flex justify-content-between text-center'>
                             <div>
-                                <p>Reverso</p>
+                                <p>Girar</p>
                             </div>
                             <div>
                                 <p>Ver/Ocultar</p>
@@ -333,6 +333,11 @@ const Opciones2 = styled.div`
             }
             p{
                 font-size: 15px;
+
+                @media screen and (max-width: 575px){
+                    width: 100%;
+                    font-size: 13px;
+                }
                 margin: 0;
             }
         }
