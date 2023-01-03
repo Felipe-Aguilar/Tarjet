@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 import Tarjetimg from '../assets/tarjetquees.png';
 import QuienesBanner from '../assets/quienesbanner.png';
 import QuienesBanner2 from '../assets/quienesbanner2.png';
-import bannertarjet from '../assets/tarjetbanner.jpg';
+import MujerBanner from '../assets/MujerBanner.jpg';
 import collage from '../assets/collage.png';
 import mundo from '../assets/mundo.png';
 import corazon from '../assets/corazon.png';
 import tarjeteroFisico from '../assets/tarjeteroFisico.png';
 import tarjetFlecha from '../assets/tarjetFlecha.png';
 import esferas from '../assets/esferas.png';
-import mujer from '../assets/mujer.png';
+import celularElementos from '../assets/celularElementos.png';
 
 const QueEsTarjet = () => {
     return (
@@ -20,7 +20,7 @@ const QueEsTarjet = () => {
             <div className='row justify-content-center' style={{marginTop: '6rem'}}>
                 <div className='col-12 text-center'>
                     <h3>¿Qué es Tarjet?</h3>
-                    <h6>Una iniciativa creada para personas que mueven al mundo.</h6>
+                    <h6>Una iniciativa creada para personas y empresas que mueven al mundo.</h6>
                 </div>
             </div>
 
@@ -42,7 +42,25 @@ const QueEsTarjet = () => {
             </div>
 
             <InfoContenedores className='row mt-4 justify-content-center'>
-                <div className='col-11 col-md-4 contenedor mundo'>
+
+                <div className='col-11 col-md-4 contenedor negocio'>
+                    <p>
+                        ya sea un negocio propio, una empresa o profesionistas. 
+                    </p>
+                    <p>
+                        podrán compartir su información y ser contratados.
+                    </p>
+                    <motion.img 
+                        src={celularElementos} 
+                        alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid' 
+                        initial={{opacity:0, scale: 0}}
+                        whileInView={{opacity:1, scale: [1,1.1,1]}}
+                        viewport={{once:true}}
+                        whileTap={{scale: 1}}
+                    />
+                </div>
+
+                {/* <div className='col-11 col-md-4 contenedor mundo'>
                     <p>
                         ya sea un negocio propio, una empresa o profesionistas.
                     </p>
@@ -58,7 +76,7 @@ const QueEsTarjet = () => {
                         viewport={{once:true}}
                         whileTap={{scale:1}}
                     />
-                </div>
+                </div> */}
 
                 <div className='col-11 mt-4 mt-md-0 col-md-4 contenedor corazon'>
                     <p>
@@ -149,7 +167,15 @@ const QueEsTarjet = () => {
                 </div>
             </CorporativosContenedor>
 
-            <CrearContenedor className='row mt-4 justify-content-center'>
+            <CrearTarjeta className='row mt-4 justify-content-center'>
+                <div className='w-auto text-center'>
+                    <h5>No es necesario crear una tarjeta, para ver, guardar y recomendar más Tarjets.</h5>
+                    <h6>Solamente crea tu cuenta</h6>
+                    <a href="">Registro Sencillo</a>
+                </div>
+            </CrearTarjeta>
+
+            {/* <CrearContenedor className='row mt-4 justify-content-center'>
                 <div className='col-11 col-md-8 contenedor'>
                     <p>
                         No es necesario crear una tarjeta virtual para guardar, recomendar y recibir recomendaciones de Tarjet's
@@ -168,7 +194,7 @@ const QueEsTarjet = () => {
                         whileTap={{scale: 1}}
                     />
                 </div>
-            </CrearContenedor>
+            </CrearContenedor> */}
 
             {/* <QueEsTarjetContenedor className='row mt-4 justify-content-center'>
                 <div className='col-11 col-md-4 contenedor contenedor1'>
@@ -192,7 +218,7 @@ const QueEsTarjet = () => {
                 </div>
 
                 <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor contenedor4'>
-                    <img src={bannertarjet} alt="Tarjet | Tu tarjeta de presentacion Online" />
+                    <img src={MujerBanner} alt="Tarjet | Tu tarjeta de presentacion Online" />
                 </div>
 
                 <div className='col-11 col-md-8 mt-4 contenedor contenedor2'>
@@ -352,7 +378,17 @@ const InfoContenedores = styled.div`
         }
         }
     }
-
+    .negocio{
+        background: #12a3d9;
+        img{
+            width: 100%;
+            float: right;
+            
+            @media screen and (max-width: 575px){
+            width: 110%;
+        }
+        }
+    }
     .corazon{
         background: #ed2f59;
         img{
@@ -471,6 +507,19 @@ const CrearContenedor = styled.div`
                 float: left;
             }
         }
+    }
+`;
+
+const CrearTarjeta = styled.div`
+    h6{
+        margin-bottom: 20px;
+    }
+    a{
+        background: #171717;
+        color: #fff;
+        padding: 7px 18px;    
+        border-radius: 6px;
+        text-decoration: none;
     }
 `;
 
