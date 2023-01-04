@@ -106,11 +106,11 @@ const Informacion = () => {
                     <motion.img 
                         src={mundo} 
                         alt="Tarjet | Tu tarjeta de presentación online" 
-                        initial={{opacity:0, scale:0}}
-                        whileInView={{opacity:1, scale:[1,1.1,1]}}
+                        // initial={{opacity:0, scale:0}}
+                        // whileInView={{opacity:1, scale:[1,1.1,1]}}
                         transition={{ease:'easeOut'}}
                         viewport={{once:true}}
-                        whileTap={{scale:1}}
+                        whileTap={{scale:2}}
                     />
                     <p>Sin costo alguno.</p>
                 </div>
@@ -529,6 +529,7 @@ const MundoMujer = styled.div`
         img{
             width: 100%;
             float: right;
+            word-break: break-word!important;
             
             @media screen and (max-width: 575px){
                 width: 110%;

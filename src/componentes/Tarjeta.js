@@ -119,13 +119,13 @@ const TarjetaVista = () => {
                         </div>
                         <div className='cuerpo d-flex justify-content-between'>
                             <div>
-                                <img src={iconoFlechas} className="img-fluid"/>
+                                <img src={iconoFlechas} className="img-fluid" onClick={() => cambiarReverso(!reverso)}/>
                             </div>
                             <div>
-                                <img src={iconoOjo} className="img-fluid"/>
+                                <img src={iconoOjo} className="img-fluid" onClick={() => cambiarVer(!ver)}/>
                             </div>
                             <div>
-                                <img src={iconoCompartir} className="img-fluid"/>
+                                <img src={iconoCompartir} className="img-fluid" onClick={() => cambiarCompartir(!compartir)}/>
                             </div>
                             <div>
                                 <img src={iconoGuardar} className="img-fluid"/>
@@ -316,6 +316,7 @@ const Opciones2 = styled.div`
                 img{
                     box-shadow: none;
                     width: 50%;
+                    cursor: pointer;
                 }
             }
         }
