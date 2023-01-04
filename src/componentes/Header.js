@@ -20,7 +20,7 @@ const Header = () => {
                         <img src={TarjetNegro} alt="Tarjet | Tu tarjeta de presentación Online" onClick={()=> cambioMenu(true)}/>
                     </NavLink>
                 </div>
-                <div className='w-auto d-block d-md-none'>
+                <div className='w-auto d-block d-lg-none'>
                     { menu ?
                         <motion.div 
                             className='Icon'
@@ -50,7 +50,7 @@ const Header = () => {
                         </motion.div>
                     }
                 </div>
-                <div className='w-auto d-none d-md-block'>
+                <div className='w-auto d-none d-lg-block'>
                     <MenuDesktop />
                 </div>
             </Encabezado>
