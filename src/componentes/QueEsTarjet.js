@@ -91,10 +91,10 @@ const QueEsTarjet = () => {
                     <motion.img 
                         src={corazon} 
                         alt="Tarjet | Tu tarjeta de presentación Online" 
-                        initial={{scale:0}}
-                        whileInView={{scale:1}}
-                        transition={{delay: 0.4}}
-                        whileTap={{rotate: 90, scale: 0.75}}
+                        initial={{opacity:0, scale:0}}
+                        whileInView={{opacity:1, scale:[1,1.1,1]}}
+                        viewport={{once:true}}
+                        whileTap={{scale: 1}}
                     />
                     <p className='w-100 float-right text-right'>
                         <span>I love Tarjet</span>
@@ -366,18 +366,6 @@ const InfoContenedores = styled.div`
             }
         }
     }
-
-    .mundo{
-        background: #12a3d9;
-        img{
-            width: 100%;
-            float: right;
-            
-            @media screen and (max-width: 575px){
-            width: 110%;
-        }
-        }
-    }
     .negocio{
         background: #12a3d9;
         img{
@@ -390,10 +378,12 @@ const InfoContenedores = styled.div`
         }
     }
     .corazon{
+        overflow: hidden;
         background: #ed2f59;
         img{
             width: 80%;
-            float: right;
+            position: relative;
+            left: 150px;
         }
     }
 `;
