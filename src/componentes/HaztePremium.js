@@ -8,7 +8,7 @@ import BannerPremium3 from '../assets/BannerPremium3.png';
 import PersonaMovimiento from '../assets/PersonaMovimiento.png';
 import ChicaDatos from '../assets/ChicaDatos.png';
 import TarjetaPremium from '../assets/TarjetaPremium.png';
-import Radar from '../assets/Radar.png';
+import Radar from '../assets/radar.png';
 import PersonasMundo from '../assets/PersonasMundo.png';
 import Tarjetas from '../assets/tarjetas.png';
 import Restaurante from '../assets/restaurante.png';

@@ -13,7 +13,7 @@ import Telefonito from '../assets/Telefonito.png';
 import Planes from '../assets/planes.png';
 import TarjetaGratis from '../assets/tarjetaGratis.png';
 import mundo from '../assets/mundo.png';
-import Radar from '../assets/Radar.png';
+import Radar from '../assets/radar.png';
 import mujer from '../assets/mujer.png';
 
 const Informacion = () => {
@@ -63,7 +63,7 @@ const Informacion = () => {
 
             <div className='row mt-4 justify-content-center'>
                 <div className='w-auto text-center'>
-                    <h5>Tendrás un micrositio que muestra más sobre tu profesión o negocio..</h5>
+                    <h5>Tendrás un micrositio que muestra más sobre tu profesión o negocio.</h5>
                 </div>
             </div>
 
