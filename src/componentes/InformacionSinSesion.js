@@ -63,7 +63,7 @@ const Informacion = () => {
 
             <div className='row mt-4 justify-content-center'>
                 <div className='w-auto text-center'>
-                    <h5>Tendrás un micrositio que muestra más sobre tu profesión o negocio.</h5>
+                    <h5>Tendrás un micrositio que muestra más sobre tu profesión o negocio..</h5>
                 </div>
             </div>
 
