@@ -374,7 +374,7 @@ const InfoContenedores = styled.div`
             
             @media screen and (max-width: 575px){
             width: 110%;
-        }
+            }
         }
     }
     .corazon{
@@ -383,7 +383,10 @@ const InfoContenedores = styled.div`
         img{
             width: 80%;
             position: relative;
-            left: 150px;
+            left: 190px;
+            @media screen and (max-width: 575px){
+                left: 150px;
+            }
         }
     }
 `;

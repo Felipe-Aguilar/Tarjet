@@ -8,8 +8,7 @@ import Slider1 from '../assets/Slide1.jpg';
 import Slider2 from '../assets/Slide2.jpg';
 import Slider3 from '../assets/Slide3.png';
 import Slider4 from '../assets/Slide4.png';
-import Banner3 from '../assets/Banner3.png';
-import Telefonito from '../assets/Telefonito.png';
+import Banner3 from '../assets/Banner32.png';
 import Planes from '../assets/planes.png';
 import TarjetaGratis from '../assets/tarjetaGratis.png';
 import mundo from '../assets/mundo.png';
@@ -44,11 +43,6 @@ const Informacion = () => {
                     <img src={Banner3} 
                         alt="Tarjet | Tú tarjeta de presentación Online" 
                         className='img-fluid'
-                    />
-                    <motion.img 
-                        src={Telefonito} 
-                        alt="Tarjet | Tu tarjeta de presentación Online" 
-                        className='telefonito'
                     />
                     <p>
                         Y compartir la información de lo que haces, <span>a todo el mundo.</span>
@@ -149,9 +143,6 @@ const Informacion = () => {
             <MundoMujer className='row mt-4 justify-content-center'>
 
                 <div className='col-11 col-md-4 contenedor radar'>
-                    <p>
-                        Puedes hacer tu Tarjet pública o privada.
-                    </p>
                     <p className='buscar'>
                         Buscar personas:
                     </p>
@@ -163,7 +154,10 @@ const Informacion = () => {
                         whileInView={{opacity:1, scale: [1,1.1,1]}}
                         viewport={{once:true}}
                         whileTap={{scale: 1}}
-                    />
+                        />
+                    <p>
+                        Puedes hacer tu Tarjet pública o privada.
+                    </p>
                 </div>
 
                 <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor mundo'>
@@ -250,7 +244,7 @@ const Informacion = () => {
 
                 <div className='col-11 col-md-4 contenedor personalizamos mt-4 mt-md-0'>
                     <p>
-                        Personalizamos la tarjeta virtual de los colaboradores de tus empresas. 
+                        Personalizamos la tarjeta virtual de los colaboradores de tu empresa. 
                     </p>
                     <p>
                         Brindamos una imagen única y diseños vanguardistas.
@@ -481,14 +475,14 @@ const MundoMujer = styled.div`
         overflow: hidden;
 
         img{
-            width: 100%;
+            width: 110%;
             /* float: right; */
             position: relative;
-            left: 97px;
+            left: 70px;
             top: -3px;
             
             @media screen and (max-width: 575px){
-                width: 110%;
+                width: 120%;
                 left: 65px;
             }
         }
@@ -501,7 +495,7 @@ const MundoMujer = styled.div`
         }
         label{
             background: #e6e7e8;
-            padding: 5px 25px 5px 10px;
+            padding: 9px 40px 9px 10px;
             border-radius: 6px;
             color: #212529;
         }
