@@ -27,13 +27,21 @@ const TarjetaVista = () => {
                         { ver ?
                             reverso && (
                                 <NavLink to="/tarjetSite">
-                                    <motion.img 
+                                    {/* <motion.img 
                                         src={tarjetaFrente} 
                                         alt="Tarjet | Tu tarjeta de presentación online"
                                         initial={{opacity:0, scale: 0}}
                                         animate={{opacity: 1, scale: [1,1.05,1]}}
                                         transition={{duration: 0.5}}
                                         exit={{opacity: 0, x:100}}
+                                    /> */}
+                                    <motion.img 
+                                        src={tarjetaFrente} 
+                                        alt="Tarjet | Tu tarjeta de presentación online"
+                                        initial={{opacity:0}}
+                                        animate={{opacity: 1}}
+                                        transition={{duration: 0.5}}
+                                        exit={{x:100, opacity: 0}}
                                     />
                                 </NavLink>
                             )
@@ -46,13 +54,21 @@ const TarjetaVista = () => {
                         { ver ?
                             !reverso && (
                                 <NavLink to="/tarjetSite">
-                                    <motion.img 
+                                    {/* <motion.img 
                                         src={tarjetaReverso}
                                         alt="Tarjet | Tu tarjeta de presentación online"
                                         initial={{opacity:0, scale: 0}}
                                         animate={{opacity: 1, scale: [1,1.05,1]}}
                                         transition={{delay:1, duration: 0.5}}
                                         exit={{transition:100 ,opacity: 0, y:100}}
+                                    /> */}
+                                    <motion.img 
+                                        src={tarjetaReverso}
+                                        alt="Tarjet | Tu tarjeta de presentación online"
+                                        initial={{opacity:0}}
+                                        animate={{x: [-100, 0], opacity: 1}}
+                                        transition={{delay:1, duration: 0.5}}
+                                        exit={{x:100, opacity:0}}
                                     />
                                 </NavLink>
                             )
@@ -210,6 +226,7 @@ const TarjetaVistaContenedor = styled.div`
     }
     .tarjeta-contenedor{
         /* height: 300px; */
+        height: 241px;
         @media screen and (max-width: 575px){
             height: 198px;
         }
