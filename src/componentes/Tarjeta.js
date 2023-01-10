@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 import iconoFlechas from '../assets/iconoFlechas.png';
 import iconoOjo from '../assets/iconoOjo.png';
+import iconoOjoSinRaya from '../assets/iconoOjoSinRaya.png';
 import iconoCompartir from '../assets/iconoCompartir.png';
 import iconoGuardar from '../assets/iconoGuardar.png';
 
@@ -67,8 +68,8 @@ const TarjetaVista = () => {
                                         alt="Tarjet | Tu tarjeta de presentación online"
                                         initial={{opacity:0}}
                                         animate={{x: [-100, 0], opacity: 1}}
-                                        transition={{delay:1, duration: 0.5}}
-                                        exit={{x:100, opacity:0}}
+                                        transition={{delay:0.5, duration: 0.5}}
+                                        exit={{opacity:0 ,x:100}}
                                     />
                                 </NavLink>
                             )
@@ -138,7 +139,11 @@ const TarjetaVista = () => {
                                 <img src={iconoFlechas} className="img-fluid" onClick={() => cambiarReverso(!reverso)}/>
                             </div>
                             <div>
-                                <img src={iconoOjo} className="img-fluid" onClick={() => cambiarVer(!ver)}/>
+                                { ver ?
+                                    <img src={iconoOjo} className="img-fluid" onClick={() => cambiarVer(false)}/>
+                                :
+                                    <img src={iconoOjoSinRaya} className="img-fluid" onClick={() => cambiarVer(true)}/>
+                                }
                             </div>
                             <div>
                                 <img src={iconoCompartir} className="img-fluid" onClick={() => cambiarCompartir(!compartir)}/>

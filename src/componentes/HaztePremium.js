@@ -13,6 +13,9 @@ import PersonasMundo from '../assets/PersonasMundo.png';
 import Tarjetas from '../assets/tarjetas.png';
 import Restaurante from '../assets/restaurante.png';
 
+import Promoo from '../assets/Promoo.png';
+
+
 const HaztePremium = () => {
     return (
 
@@ -21,15 +24,33 @@ const HaztePremium = () => {
                 <div className='col-12 p-0'>
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
+
+                            <div class="carousel-item active" data-interval="4000">
+                                <div className='row justify-content-center align-items-center slider-personalizado'>
+                                    <div className='col-6'>
+                                        <h1>Es la forma profesional y fácil</h1>
+                                        <h4>de compartir tus servicios o prodcutos de una forma profesional</h4>
+                                    </div>
+                                    <div className='w-auto '>
+                                        <img src={Promoo} alt=""/>
+                                    </div>
+                                </div>
+
+                                <div className='row slider-personalizado slider-mobile d-block d-md-none'>
+                                    <h1>Es la herramienta perfecta</h1>
+                                    <h4>para compartir tus servicios o productos de uan forma sencilla y profesional.</h4>
+                                    <img src={Promoo} alt=""/>
+                                </div>
+                            </div>
+                            {/* <div class="carousel-item active" data-interval="4000">
                                 <img src={BannerPremium1} alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid'/>
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item" data-interval="4000">
                                 <img src={BannerPremium2} alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid'/>
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item" data-interval="4000">
                                 <img src={BannerPremium3} alt="Tarjet | Tu tarjeta de presentación Online" className='img-fluid'/>
-                            </div>
+                            </div> */}
                         </div>
 
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -244,6 +265,43 @@ const HaztePremiumContenedor = styled.div`
 
 const Slider = styled.div`
     margin-top: 4rem;
+
+    .slider-personalizado{
+        padding: 40px 20px;
+        background: #00afef;
+        color: #fff;
+        height: 80vh;
+
+        @media screen and (max-width: 575px){
+            display: none;
+        }
+
+        img{
+            width: 300px;
+        }
+    }
+
+    .slider-mobile{
+        padding: 30px;
+        background: #00afef;
+        color: #fff;
+
+        h1{
+            font-size: 30px;
+        }
+        h4{
+            font-size: 20px;
+            width: 60%;
+        }
+
+        img{
+            width: 215px;
+            /* float: right; */
+            position: absolute;
+            bottom: 35px;
+            right: 30px;
+        }
+    }
 `;
 
 const DiseñosTarjet = styled.div`

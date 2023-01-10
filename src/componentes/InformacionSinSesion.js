@@ -65,7 +65,7 @@ const Informacion = () => {
                 <div className='col-11 col-md-4 slider'>
                     <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                         <div className="carousel-inner">
-                            <div className="carousel-item active">
+                            <div className="carousel-item active" data-interval="3000">
                                 <div className='contenedor'>
                                     <img src={Slider3} 
                                         alt="Tarjet | Tu tarjeta de presentación Online" 
@@ -73,7 +73,7 @@ const Informacion = () => {
                                     />
                                 </div>
                             </div>
-                            <div className="carousel-item">
+                            <div className="carousel-item" data-interval="3000">
                                 <div className='contenedor '>
                                     <img src={Slider1} 
                                         alt="Tarjet | Tu tarjeta de presentación Online" 
@@ -82,7 +82,7 @@ const Informacion = () => {
                                 </div>
                             </div>
 
-                            <div className="carousel-item">
+                            <div className="carousel-item" data-interval="3000">
                                 <div className='contenedor'>
                                     <img src={Slider2} 
                                         alt="Tarjet | Tu tarjeta de presentación Online" 
