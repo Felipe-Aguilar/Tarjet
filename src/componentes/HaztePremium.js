@@ -20,10 +20,10 @@ const HaztePremium = () => {
     return (
 
         <>
-            <Slider className='row'>
-                <div className='col-12 p-0'>
+            <Slider className='row justify-content-center'>
+                <div className='col-11'>
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
+                        <div class="carousel-inner marginn">
 
                             <div class="carousel-item active" data-interval="4000">
                                 <div className='row justify-content-center align-items-center slider-personalizado'>
@@ -264,8 +264,12 @@ const HaztePremiumContenedor = styled.div`
 `;
 
 const Slider = styled.div`
-    margin-top: 4rem;
+    margin-top: 5rem;
 
+    .marginn{
+        border-radius: 20px;
+    }
+    
     .slider-personalizado{
         padding: 40px 20px;
         background: #00afef;
