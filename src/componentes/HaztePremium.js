@@ -21,7 +21,7 @@ const HaztePremium = () => {
 
         <>
             <Slider className='row justify-content-center'>
-                <div className='col-11'>
+                <div className='col-8 p-0'>
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner marginn">
 

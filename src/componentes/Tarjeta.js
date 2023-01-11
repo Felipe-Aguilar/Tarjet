@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import { motion, AnimatePresence } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 import tarjetaFrente from '../assets/TarjetaFrente.png';
 import tarjetaReverso from '../assets/TarjetaReverso.png';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
+import tarjetaFrenteVacia from '../assets/TarjetaFrenteVacia.png';
+import tarjetaReversoVacia from '../assets/TarjetaReversoVacia.png';
+
 
 import iconoFlechas from '../assets/iconoFlechas.png';
 import iconoOjo from '../assets/iconoOjo.png';
@@ -21,7 +24,15 @@ const TarjetaVista = () => {
     const [compartir, cambiarCompartir] = useState(false);
 
     return (
-        <>
+        <>  
+            <div className='tarjeta row justify-content-center'>
+                <div className='col-11 col-md-4 p-0'>
+                    <img src={tarjetaFrenteVacia} className="img-fluid" />
+                    <h4>Cindy Gutierrez</h4>
+                    <h5>Bienes y Raíces</h5>
+                </div>
+            </div>
+
             <TarjetaVistaContenedor className='row justify-content-center align-items-md-center'>
                 <div className="col-12 col-md-4 tarjeta-contenedor">
                     <AnimatePresence>
