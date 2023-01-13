@@ -1,11 +1,22 @@
-.canvas{
+.canvas-contenedor{
     margin-top: 6rem;
 
     canvas{
         background: #fff;
-        // background-image: url('../assets/TarjetaFrenteVacia.png');
-        // background-size: cover;
-
         border-radius: 11px;
+        display: block;
+        margin: auto;
+    }
+    button{
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+
+        padding: 5px 20px;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+        background: #406fe8;
+        color: #fff;
     }
 }

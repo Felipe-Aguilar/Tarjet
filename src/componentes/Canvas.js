@@ -20,7 +20,7 @@ const Canvas = () => {
 
         context.font = "bold 20px serif";
         context.fillStyle = "#fff";
-        context.fillText("CINDY GUTIERREZ",200,200);
+        context.fillText("CINDY GUTIERREZ",190,160);
         
         setCanvasContext(context);
     });
@@ -37,8 +37,8 @@ const Canvas = () => {
     }
     
     return ( 
-        <div className='row justify-content-center canvas'>
-            <div className='col-11 col-md-5 bg-danger'>
+        <div className='row justify-content-center canvas-contenedor'>
+            <div className='col-11 col-md-5'>
                 <canvas ref={canvasRef} width={'397px'} height={'238px'} >
                     
                 </canvas>
