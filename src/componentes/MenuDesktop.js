@@ -11,6 +11,7 @@ const MenuDesktop = () => {
             <NavLink href="">Empresas</NavLink>
             <NavLink href="">Mi Perfil</NavLink>
             <NavLink href="">Contacto</NavLink>
+            <NavLink to="/canvas">Canvas</NavLink>
         </MenuDesktopContenedor>
     );
 }

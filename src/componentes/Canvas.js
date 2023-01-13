@@ -16,14 +16,14 @@ const Canvas = () => {
         
         const img = new Image();
         img.src = tarjetaFrenteVacia;
-        context.drawImage(img, 0, 0, 397, 238);
+        context.drawImage(img, 0, 0,397, 238);
 
         context.font = "bold 20px serif";
         context.fillStyle = "#fff";
         context.fillText("CINDY GUTIERREZ",200,200);
         
         setCanvasContext(context);
-    },[]);
+    });
 
     const guardar = () =>{
         const canvas = canvasRef.current;
