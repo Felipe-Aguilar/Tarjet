@@ -28,6 +28,7 @@ const Menu = ({cambioMenu}) => {
                         <img src={Corona} alt="Tarjet | Tu tarjeta de presentación Online"/>
                     </NavLink>
                     <a href="#">Contacto</a>
+                    <NavLink to="/canvas" onClick={()=>cambioMenu(true)}>Canvas</NavLink>
                 </div>
 
                 <div className='sesion d-flex justify-content-center align-items-end'>
