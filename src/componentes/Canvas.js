@@ -2,42 +2,9 @@ import React, {useRef, useEffect, useState} from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 
 import TuDiseño from './canvas/TuDiseño';
-
-import tarjetaFrenteVacia from '../assets/TarjetaFrenteVacia.png';
-import tarjetaReversoVacia from '../assets/TarjetaReversoVacia.png';
-
+import TusDatos from './canvas/TusDatos';
 
 const Canvas = () => {
-
-    // const [canvasContext, setCanvasContext] = useState(null);
-    
-    // const canvasRef = useRef(null);
-    
-    // useEffect(()=>{
-    //     const canvas = canvasRef.current;
-    //     const context = canvas.getContext('2d');
-        
-    //     const img = new Image();
-    //     img.src = tarjetaFrenteVacia;
-    //     context.drawImage(img, 0, 0,397, 238);
-
-    //     context.font = "bold 20px serif";
-    //     context.fillStyle = "#fff";
-    //     context.fillText("CINDY GUTIERREZ",190,160);
-        
-    //     setCanvasContext(context);
-    // });
-
-    // const guardar = () =>{
-    //     const canvas = canvasRef.current;
-
-    //     const dato = canvas.toDataURL();
-    //     const link = document.createElement("a");
-    //     link.href = dato;
-    //     link.download = 'tarjetaImagen';
-    //     link.click();
-        
-    // }
     
     return ( 
         <div className='canvas-contenedor'>
@@ -68,25 +35,9 @@ const Canvas = () => {
                 </div>
             </div>
 
-            <Routes>
-                <Route path='*' element={<TuDiseño />}/>
-                
-                <Route path='*/tu-diseño' element={<TuDiseño />}/>
-                <Route path='*/tus-datos'/>
-                <Route path='*/reverso'/>
-            </Routes>
-
-            {/* <div className='row justify-content-center'>
-                <div className='col-11 col-md-5'>
-                    <canvas ref={canvasRef} width={'397px'} height={'238px'} >
-                    
-                    </canvas>
-
-                    <button onClick={()=>guardar()}>
-                        Guardar imagen
-                    </button>
-                </div>
-            </div> */}
+            <TuDiseño />
+            <TusDatos />
+            
         </div>
     );
 }
