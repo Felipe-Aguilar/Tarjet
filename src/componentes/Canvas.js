@@ -39,7 +39,8 @@ const Canvas = () => {
             </div>
 
             <Routes>
-                <Route path='/' element={<TuDiseño />}/>
+                <Route path='/' element={<TuDiseño />}
+                />
                 <Route path='tu-diseño' element={<TuDiseño />}/>
                 <Route path='tus-datos' element={<TusDatos />}/>
                 <Route path='reverso' element={<Reverso />}/>
