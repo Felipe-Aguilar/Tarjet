@@ -3,6 +3,7 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 
 import TuDiseño from './canvas/TuDiseño';
 import TusDatos from './canvas/TusDatos';
+import Reverso from './canvas/Reverso';
 
 const Canvas = () => {
     
@@ -37,6 +38,7 @@ const Canvas = () => {
 
             <TuDiseño />
             <TusDatos />
+            <Reverso />
             
         </div>
     );
