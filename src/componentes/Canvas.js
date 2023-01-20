@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 
 import TuDiseño from './canvas/TuDiseño';
@@ -6,7 +6,9 @@ import TusDatos from './canvas/TusDatos';
 import Reverso from './canvas/Reverso';
 
 const Canvas = () => {
-    
+
+    const [activo, setActivo] = useState('active');
+
     return ( 
         <div className='canvas-contenedor'>
             <div className='row justify-content-center'>
@@ -23,22 +25,25 @@ const Canvas = () => {
             <div className='row mt-3 justify-content-center'>
                 <div className='col-12 col-md-8 menu'>
                     <div className='nav-container w-auto'>
-                        <NavLink to="/canvas/tu-diseño" className="active">
+                        <NavLink to="tu-diseño" className={activo} onClick={()=>setActivo('active')}>
                             <i className="bi bi-1-circle-fill"></i> Tu diseño
                         </NavLink>
-                        <NavLink to="/canvas/tus-datos">
+                        <NavLink to="tus-datos" onClick={()=>setActivo("")}>
                             <i className="bi bi-2-circle-fill"></i> Tus datos
                         </NavLink>
-                        <NavLink to="/canvas/reverso">
+                        <NavLink to="reverso" onClick={()=>setActivo("")}>
                             <i className="bi bi-3-circle-fill"></i> Reverso
                         </NavLink>
                     </div>
                 </div>
             </div>
 
-            <TuDiseño />
-            <TusDatos />
-            <Reverso />
+            <Routes>
+                <Route path='/' element={<TuDiseño />}/>
+                <Route path='tu-diseño' element={<TuDiseño />}/>
+                <Route path='tus-datos' element={<TusDatos />}/>
+                <Route path='reverso' element={<Reverso />}/>
+            </Routes>
             
         </div>
     );

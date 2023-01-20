@@ -38,7 +38,7 @@ const TusDatos = () => {
                             <div className='col-6 switch-contenedor'>
                                 <label>Tarjet pública</label>
                                 <i className="bi bi-question-circle-fill"></i>
-                                <label class="switch">
+                                <label className="switch">
                                     <input type="checkbox" />
                                     <span className="slider"></span>
                                 </label>
@@ -63,7 +63,7 @@ const TusDatos = () => {
                             <div className='col-8 col-md-6 mt-2 mt-md-0 switch-contenedor'>
                                 <label>En mantenimiento</label>
                                 <i className="bi bi-question-circle-fill"></i>
-                                <label class="switch">
+                                <label className="switch">
                                     <input type="checkbox" />
                                     <span className="slider"></span>
                                 </label>
@@ -72,7 +72,7 @@ const TusDatos = () => {
                             <div className='col-12 col-md-8 mt-2 mt-md-0 switch-contenedor'>
                                 <label>Mostrar estadísticas de tu actividad</label>
                                 <i className="bi bi-question-circle-fill"></i>
-                                <label class="switch">
+                                <label className="switch">
                                     <input type="checkbox" />
                                     <span className="slider"></span>
                                 </label>

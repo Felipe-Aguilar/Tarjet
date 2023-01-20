@@ -24,7 +24,7 @@ const App = () => {
           <Route path='/tarjetSite' element={<TarjetSite />}/>
           <Route path='/que-es-tarjet' element={<QueEsTarjet />}/>
           <Route path='/hazte-premium' element={<HaztePremium />}/>
-          <Route path='/canvas' element={<Canvas />}/>
+          <Route path='/canvas/*' element={<Canvas />}/>
         </Routes>
 
         <Footer />
