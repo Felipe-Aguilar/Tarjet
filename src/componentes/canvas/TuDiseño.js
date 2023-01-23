@@ -9,6 +9,7 @@ const TuDiseño = () => {
 
     const [canvasContext, setCanvasContext] = useState(null);
     const canvasRef = useRef(null);
+    const canvasRefMobile = useRef(null);
     
     useEffect(()=>{
         const canvas = canvasRef.current;
@@ -17,11 +18,28 @@ const TuDiseño = () => {
         const img = new Image();
         img.src = tarjetaFrenteVacia;
         context.drawImage(img, 0, 0,397, 238);
-
+        
         context.font = "bold 20px serif";
         context.fillStyle = "#fff";
         context.fillText(nombre.toUpperCase() ,190,160);
         context.fillText(subtitulo.toUpperCase() ,190,190);
+        
+        setCanvasContext(context);
+    });
+
+    // Canvas Mobile
+    useEffect(()=>{
+        const canvas = canvasRefMobile.current;
+        const context = canvas.getContext('2d');
+        
+        const img = new Image();
+        img.src = tarjetaFrenteVacia;
+        context.drawImage(img, 0, 0,330, 198);
+        
+        context.font = "bold 20px serif";
+        context.fillStyle = "#fff";
+        context.fillText(nombre.toUpperCase() ,150,140);
+        context.fillText(subtitulo.toUpperCase() ,145,165);
         
         setCanvasContext(context);
     });
@@ -40,7 +58,7 @@ const TuDiseño = () => {
     return ( 
         <div className='mt-3 TuDiseño'>
             <div className='row justify-content-center'>
-                <div className='col-11 col-md-8'>
+                <div className='col-11 col-md-8 d-none d-md-block'>
                     <form>
                         <label>Colección: </label>
                         <select>
@@ -52,8 +70,12 @@ const TuDiseño = () => {
             </div>
 
             <div className='row mt-2 justify-content-center'>
-                <div className='col-11 col-md-8'>
-                    <canvas ref={canvasRef} width={'397px'} height={'238px'} >
+                <div className='col-11 col-md-8 d-none d-md-block'>
+                    <canvas ref={canvasRef} width={'397px'} height={'238px'}>
+                    </canvas>
+                </div>
+                <div className='col-11 col-md-8 d-block d-md-none' id='canvasMobile'>
+                    <canvas ref={canvasRefMobile} width={'330px'} height={'198px'} >
                     </canvas>
                 </div>
             </div>
