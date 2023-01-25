@@ -3,7 +3,6 @@ import React,{ useRef, useState, useEffect} from 'react';
 import tarjetaReversoVacia from '../../assets/TarjetaReversoVacia.png';
 
 
-
 const Reverso = () => {
 
     const [telefono, setTelefono] = useState('');
@@ -14,6 +13,7 @@ const Reverso = () => {
 
     const [canvasContext, setCanvasContext] = useState(null);
     const canvasRef = useRef(null);
+    const canvasRefMobile = useRef(null);
     
     useEffect(()=>{
         const canvas = canvasRef.current;
@@ -34,12 +34,35 @@ const Reverso = () => {
         setCanvasContext(context);
     });
 
+    // Canvas Mobile 
+    useEffect(()=>{
+        const canvas = canvasRefMobile.current;
+        const context = canvas.getContext('2d');
+        
+        const img = new Image();
+        img.src = tarjetaReversoVacia;
+        context.drawImage(img, 0, 0,397, 238);
+
+        context.font = "bold 20px serif";
+        context.fillStyle = "#fff";
+        context.fillText(telefono ,30,150);
+        context.fillText(ubicacion ,30,175);
+        context.fillText(servicio1 ,30,60);
+        context.fillText(servicio2 ,30,80);
+        context.fillText(servicio3 ,30,100);
+        
+        setCanvasContext(context);
+    });
+
     return ( 
         <div className='mt-3 Reverso'>
             <div className='row justify-content-center'>
-
-                <div className='col-11 col-md-8'>
+                <div className='col-11 col-md-8 d-none d-md-block'>
                     <canvas ref={canvasRef} width={'397px'} height={'238px'} >
+                    </canvas>
+                </div>
+                <div className='col-11 col-md-8 d-block d-md-none'>
+                    <canvas ref={canvasRefMobile} width={'330px'} height={'198px'} >
                     </canvas>
                 </div>
             </div>
@@ -156,6 +179,15 @@ const Reverso = () => {
                             Acepto términos de privacidad
                         </label>
                     </form>
+                </div>
+            </div>
+
+            <div className='row mt-3 justify-content-center'>
+                <div className='col-11 col-md-5'>
+                    <button>
+                        Siguiente 
+                        <i className="bi bi-chevron-double-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence ,motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import Menu from './Menu';
 import MenuDesktop from './MenuDesktop';

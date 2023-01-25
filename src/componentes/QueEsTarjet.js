@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import Tarjetimg from '../assets/tarjetquees.png';
 import QuienesBanner from '../assets/quienesbanner.png';

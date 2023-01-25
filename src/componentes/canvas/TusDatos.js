@@ -83,6 +83,15 @@ const TusDatos = () => {
                 </div>
             </div>
 
+            <div className='row justify-content-center'>
+                <div className='col-11 col-md-5'>
+                    <button>
+                        Siguiente 
+                        <i className="bi bi-chevron-double-right"></i>
+                    </button>
+                </div>
+            </div>
+
         </div>
     );
 }

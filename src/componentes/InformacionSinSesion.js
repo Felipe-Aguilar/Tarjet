@@ -37,7 +37,7 @@ const Informacion = () => {
                         whileInView={{opacity:1, scale: [1,1.1,1]}}
                         viewport={{once: true}}
                         whileTap={{scale: 1}}
-                        />
+                    />
                 </div>
                 <div className='col-11 col-md-4 mt-4 mt-md-0 contenedor personas'>
                     <img src={Banner3} 

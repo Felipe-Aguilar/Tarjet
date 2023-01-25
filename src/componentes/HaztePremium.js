@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import BannerPremium1 from '../assets/BannerPremium1.png';
 import BannerPremium2 from '../assets/BannerPremium2.png';

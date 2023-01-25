@@ -1,11 +1,15 @@
+import { setSelectionRange } from '@testing-library/user-event/dist/utils/edit/selectionRange';
 import React, {useEffect, useRef, useState} from 'react';
 
 import tarjetaFrenteVacia from '../../assets/TarjetaFrenteVacia.png';
 
-const TuDiseño = () => {
+const TuDiseño = ({textoValidacion}) => {
 
     const [nombre, setNombre] = useState('');
+    const [nombreValido, setNombreValido] = useState(false);
+
     const [subtitulo, setSubtitulo] = useState('');
+    const [subtituloValido, setSubtituloValido] = useState(false);
 
     const [canvasContext, setCanvasContext] = useState(null);
     const canvasRef = useRef(null);
@@ -21,6 +25,7 @@ const TuDiseño = () => {
         
         context.font = "bold 20px serif";
         context.fillStyle = "#fff";
+
         context.fillText(nombre.toUpperCase() ,190,160);
         context.fillText(subtitulo.toUpperCase() ,190,190);
         
@@ -54,6 +59,33 @@ const TuDiseño = () => {
     //     link.click();
         
     // }
+
+    const validacionNom = () =>{
+        if (textoValidacion.test(nombre)){
+            setNombreValido(true);
+            document.getElementById('inputNombre').style.border = '2px solid #e3e3e3';
+        }else{
+            setNombreValido(false);
+            document.getElementById('inputNombre').style.border = '2px solid #f62e2e';
+        }
+        // if (nombre == "") {
+        //     setError('Falta por llenar un campo');
+        // }
+    }
+
+    const validacionSub = () =>{
+        if (textoValidacion.test(subtitulo)){
+            setSubtituloValido(true);
+            document.getElementById('inputSubtitulo').style.border = '2px solid #e3e3e3';
+        }else{
+            setSubtituloValido(false);
+            document.getElementById('inputSubtitulo').style.border = '2px solid #f62e2e';
+            // setError('El subtitulo tiene que ser de 4 a 20 dígitos y solo puede contener letras.');
+        }
+        // if (subtitulo == "") {
+        //     setError('Falta por llenar un campo');
+        // }
+    }
 
     return ( 
         <div className='mt-3 TuDiseño'>
@@ -96,22 +128,57 @@ const TuDiseño = () => {
                             <option value="Sr." key="">Sr.</option>
                         </select>
                         <input 
-                            type="text" 
+                            type="text"
+                            id='inputNombre'
                             placeholder='Nombre y apellidos (40 caracteres)' 
                             maxLength={40} 
                             className='nombre'
                             value={nombre}
                             onChange={(e)=>{setNombre(e.target.value)}}
+                            pattern={textoValidacion}
+                            // Al presionar tecla 
+                            onKeyUp={validacionNom}
+                            // Al dar clic fuera del input
+                            onBlur={validacionNom}
                         />
                         <input 
-                            type="text" 
+                            type="text"
+                            id='inputSubtitulo'
                             placeholder='Texto debajo de tu nombre (30 caracteres)' 
                             maxLength={30} 
                             className='texto'
                             value={subtitulo}
                             onChange={(e)=>{setSubtitulo(e.target.value)}}
+                            onKeyUp={validacionSub}
+                            onBlur={validacionSub}
                         />
                     </form>
+                </div>
+            </div>
+
+            
+            <div className='row mt-2 justify-content-center'>
+                <div className='col-11 col-md-5'>
+                    <div className='error'>
+                        <p>
+                            <i className="bi bi-exclamation-circle"></i>
+                            El nombre tiene que ser de 4 a 20 dígitos y solo puede contener letras.
+                        </p>
+                        <p>
+                            <i className="bi bi-exclamation-circle"></i>
+                            El subtitulo tiene que ser de 4 a 20 dígitos y solo puede contener letras.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div className='row mt-2 justify-content-center'>
+                <div className='col-11 col-md-5'>
+                    <button>
+                        Siguiente 
+                        <i className="bi bi-chevron-double-right"></i>
+                    </button>
                 </div>
             </div>
 

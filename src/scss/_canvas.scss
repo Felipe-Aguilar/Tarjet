@@ -1,7 +1,9 @@
 $colorVerde: #00a859;
-$bordeColor: #b7b7b7;
+$bordeColor: #e3e3e3;
 $colorRojo: #d80b0b;
 $colorAzul: #133d8a;
+$colorError: #f62e2e;
+$colorErrorBg: #ebc3c3;
 
 .canvas-contenedor{
     margin-top: 6rem;
@@ -26,6 +28,10 @@ $colorAzul: #133d8a;
                 border-bottom: 3px solid rgb(114, 114, 114);
                 text-decoration: none;
 
+                @media screen and (max-width: 575px){
+                    font-size: 16px;
+                }
+
                 &:active{
                     color: $colorVerde;
                     border-bottom: 3px solid $colorVerde;
@@ -41,6 +47,34 @@ $colorAzul: #133d8a;
             }
         }
     }
+    button{
+        float: right;
+        border-radius: 6px;
+        padding: 3px 10px;
+        border: 2px solid $colorVerde;
+        background: $colorVerde;
+        color: #fff;
+        outline: none;
+        transition: all .3s ease;
+
+        &:hover{
+            background: #029550;
+            border: 2px solid #029550;
+        }
+    }
+    .error{
+        width: 100%;
+        padding: 5px 10px;
+        border-radius: 6px;
+        border: 2px solid $colorError;
+        background: $colorErrorBg;
+        color: $colorError;
+        font-size: 13px;
+
+        i{
+            margin-right: 5px;
+        }
+    }
 }
 
 .TuDiseño{
@@ -49,7 +83,7 @@ $colorAzul: #133d8a;
             margin-right: 10px;
         }
         input,select{
-            border: 1px solid $bordeColor;
+            border: 2px solid $bordeColor;
             border-radius: 6px;
             outline: none;
             padding: 3px 5px;
@@ -64,6 +98,7 @@ $colorAzul: #133d8a;
         input{
             text-transform: uppercase;
             margin: 5px 0;
+
             @media screen and (max-width: 575px){
                 font-size: 15px;
             }
