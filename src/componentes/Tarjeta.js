@@ -1,11 +1,17 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import { AnimatePresence, motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 import tarjetaFrente from '../assets/TarjetaFrente.png';
 import tarjetaReverso from '../assets/TarjetaReverso.png';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
+import iconoFlechas from '../assets/iconoFlechas.png';
+import iconoOjo from '../assets/iconoOjo.png';
+import iconoOjoSinRaya from '../assets/iconoOjoSinRaya.png';
+import iconoCompartir from '../assets/iconoCompartir.png';
+import iconoGuardar from '../assets/iconoGuardar.png';
+
 
 const TarjetaVista = () => {
 
@@ -14,20 +20,28 @@ const TarjetaVista = () => {
     const [compartir, cambiarCompartir] = useState(false);
 
     return (
-        <>
-            <TarjetaVistaContenedor className='row justify-content-center align-items-md-center mt-3'>
+        <>  
+            <TarjetaVistaContenedor className='row justify-content-center align-items-md-center'>
                 <div className="col-12 col-md-4 tarjeta-contenedor">
                     <AnimatePresence>
                         { ver ?
                             reverso && (
                                 <NavLink to="/tarjetSite">
-                                    <motion.img 
+                                    {/* <motion.img 
                                         src={tarjetaFrente} 
                                         alt="Tarjet | Tu tarjeta de presentación online"
                                         initial={{opacity:0, scale: 0}}
                                         animate={{opacity: 1, scale: [1,1.05,1]}}
                                         transition={{duration: 0.5}}
                                         exit={{opacity: 0, x:100}}
+                                    /> */}
+                                    <motion.img 
+                                        src={tarjetaFrente} 
+                                        alt="Tarjet | Tu tarjeta de presentación online"
+                                        initial={{opacity:0}}
+                                        animate={{opacity: 1}}
+                                        transition={{duration: 0.5}}
+                                        exit={{x:100, opacity: 0}}
                                     />
                                 </NavLink>
                             )
@@ -40,13 +54,21 @@ const TarjetaVista = () => {
                         { ver ?
                             !reverso && (
                                 <NavLink to="/tarjetSite">
-                                    <motion.img 
+                                    {/* <motion.img 
                                         src={tarjetaReverso}
                                         alt="Tarjet | Tu tarjeta de presentación online"
                                         initial={{opacity:0, scale: 0}}
                                         animate={{opacity: 1, scale: [1,1.05,1]}}
                                         transition={{delay:1, duration: 0.5}}
                                         exit={{transition:100 ,opacity: 0, y:100}}
+                                    /> */}
+                                    <motion.img 
+                                        src={tarjetaReverso}
+                                        alt="Tarjet | Tu tarjeta de presentación online"
+                                        initial={{opacity:0}}
+                                        animate={{x: [-100, 0], opacity: 1}}
+                                        transition={{delay:0.5, duration: 0.5}}
+                                        exit={{opacity:0 ,x:100}}
                                     />
                                 </NavLink>
                             )
@@ -57,7 +79,7 @@ const TarjetaVista = () => {
                     </AnimatePresence>
                 </div>
 
-                <Opciones className='col-11 col-md-4 text-center'>
+                {/* <Opciones className='col-11 col-md-4 text-center'>
                     <div className='row headControl'>
                         <div className='w-100'>
                             <h6>Tarjet Control</h6>
@@ -103,7 +125,49 @@ const TarjetaVista = () => {
                             <p>Guardar</p>
                         </div>
                     </div>
-                </Opciones>
+                </Opciones> */}
+
+                <Opciones2 className='col-11 col-md-4 text-center mt-4 mt-md-0'>
+                    <h6>¿Qué deseas hacer con tu Tarjeta?</h6>
+                    <div className='contenedor'>
+                        <div className='header'>
+                            <h6>Tarjet Control</h6>
+                        </div>
+                        <div className='cuerpo d-flex justify-content-between'>
+                            <div>
+                                <img src={iconoFlechas} className="img-fluid" onClick={() => cambiarReverso(!reverso)}/>
+                            </div>
+                            <div>
+                                { ver ?
+                                    <img src={iconoOjo} className="img-fluid" onClick={() => cambiarVer(false)}/>
+                                :
+                                    <img src={iconoOjoSinRaya} className="img-fluid" onClick={() => cambiarVer(true)}/>
+                                }
+                            </div>
+                            <div>
+                                <img src={iconoCompartir} className="img-fluid" onClick={() => cambiarCompartir(!compartir)}/>
+                            </div>
+                            <div>
+                                <img src={iconoGuardar} className="img-fluid"/>
+                            </div>
+                        </div>
+                        <div className='footer d-flex justify-content-between text-center'>
+                            <div>
+                                <p>Girar</p>
+                            </div>
+                            <div>
+                                <p>Ver/Ocultar</p>
+                            </div>
+                            <div>
+                                <p>Compartir</p>
+                            </div>
+                            <div>
+                                <p>Guardar</p>
+                            </div>
+                        </div>
+                    </div>
+                </Opciones2>
+
                 <AnimatePresence>
                     { compartir && (
                         <motion.div 
@@ -142,6 +206,7 @@ const TarjetaVista = () => {
 }
 
 const TarjetaVistaContenedor = styled.div`
+    margin-top: 6rem;
     gap: 20px;
     @media screen and (max-width: 575px){
         gap: 0; 
@@ -153,20 +218,19 @@ const TarjetaVistaContenedor = styled.div`
         width: 100%;
         border-radius: 11px;
         box-shadow:
-        0px 0px 1.9px rgba(0, 0, 0, 0.041),
-        0px 0px 4.3px rgba(0, 0, 0, 0.06),
-        0px 0px 7.7px rgba(0, 0, 0, 0.074),
-        0px 0px 12.8px rgba(0, 0, 0, 0.086),
-        0px 0px 21.2px rgba(0, 0, 0, 0.1),
-        0px 0px 37px rgba(0, 0, 0, 0.119),
-        0px 0px 80px rgba(0, 0, 0, 0.16)
+        0px 0px 2.7px rgba(0, 0, 0, 0.022),
+        0px 0px 6.9px rgba(0, 0, 0, 0.031),
+        0px 0px 14.2px rgba(0, 0, 0, 0.039),
+        0px 0px 29.2px rgba(0, 0, 0, 0.048),
+        0px 0px 80px rgba(0, 0, 0, 0.07)
         ;
         @media screen and (max-width: 575px){
             width: 100%;
         }
     }
     .tarjeta-contenedor{
-        height: 300px;
+        /* height: 300px; */
+        height: 241px;
         @media screen and (max-width: 575px){
             height: 198px;
         }
@@ -193,12 +257,9 @@ const Opciones = styled.div`
     padding-top:0;
     height: 100px;
     
-    @media screen and (max-width: 360px) and (max-height: 800px){
-        margin-top: 10px;
-    }
     @media screen and (max-width: 575px){
         height: auto;
-        margin-top: 30px;
+        margin-top: 1.3rem;
         padding: 5px 15px;
         padding-top:0;
     }
@@ -237,5 +298,70 @@ const Opciones = styled.div`
 //         color: #000;
 //     }
 // `;
+
+const Opciones2 = styled.div`
+    /* background: #aed7ca; */
+    background: #c1e1d7;
+    padding: 20px;
+    border-radius: 11px;
+    color: #fff;
+    
+    @media screen and (max-width: 575px){
+        padding: 20px 10px;
+    }
+
+    h6{
+        color: #007f5b;
+    }
+
+    .contenedor{
+        border-radius: 11px;
+        width: 90%;
+        margin: auto;
+        @media screen and (max-width: 575px){
+            width: 100%;
+        }
+        .header{
+            background: #007f5b;
+            padding: 7px;
+            border-radius: 11px 11px 0 0;
+            h6{
+                color:#fff;
+                margin: 0;
+            }
+        }
+        .cuerpo{
+            background: #43af8d;
+            padding: 5px 0;
+            div{
+                img{
+                    box-shadow: none;
+                    width: 50%;
+                    cursor: pointer;
+                }
+            }
+        }
+        .footer{
+            background: #007f5b;
+            padding: 5px 25px;
+            border-radius: 0 0 11px 11px;
+            @media screen and (max-width: 575px){
+                padding: 5px 20px;
+            }
+            div{
+                /* background-color: red; */
+            }
+            p{
+                font-size: 15px;
+
+                @media screen and (max-width: 575px){
+                    width: 100%;
+                    font-size: 13px;
+                }
+                margin: 0;
+            }
+        }
+    }
+`;
 
 export default TarjetaVista;
