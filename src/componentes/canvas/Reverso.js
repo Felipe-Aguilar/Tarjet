@@ -3,13 +3,14 @@ import React,{ useRef, useState, useEffect} from 'react';
 import tarjetaReversoVacia from '../../assets/TarjetaReversoVacia.png';
 
 
-const Reverso = () => {
+const Reverso = ({numeroValidacion, direccionValidacion}) => {
 
     const [telefono, setTelefono] = useState('');
     const [ubicacion, setUbicacion] = useState('');
     const [servicio1, setServicio1] = useState('');
     const [servicio2, setServicio2] = useState('');
     const [servicio3, setServicio3] = useState('');
+    const [terminos, setTerminos] = useState();
 
     const [canvasContext, setCanvasContext] = useState(null);
     const canvasRef = useRef(null);
@@ -54,6 +55,32 @@ const Reverso = () => {
         setCanvasContext(context);
     });
 
+    
+    // Validaciones
+    const [telefonoValido, setTelefonoValido] = useState();
+    const [ubicacionValido, setUbicacionValido] = useState();
+    const [servicioValido, setServicioValido] = useState();
+
+    const validacionNum = () =>{
+        if (numeroValidacion.test(telefono)) {
+            setTelefonoValido(true);
+            document.getElementById('inputTelefono').style.border = '2px solid #e3e3e3';
+        }else{
+            setTelefonoValido(false);
+            document.getElementById('inputTelefono').style.border = '2px solid #f62e2e';
+        }
+    }
+
+    const validacionUbi = () =>{
+        if (direccionValidacion.test(ubicacion)) {
+            setUbicacionValido(true);
+            document.getElementById('inputUbicacion').style.border = '2px solid #e3e3e3';
+        }else{
+            setUbicacionValido(false);
+            document.getElementById('inputUbicacion').style.border = '2px solid #f62e2e';
+        }
+    }
+
     return ( 
         <div className='mt-3 Reverso'>
             <div className='row justify-content-center'>
@@ -82,6 +109,9 @@ const Reverso = () => {
                                 maxLength={10}
                                 value={telefono}
                                 onChange={(e)=>{setTelefono(e.target.value)}}
+                                onKeyUp={validacionNum}
+                                onBlur={validacionUbi}
+                                id='inputTelefono'
                             />
                             <label className='label-info'>
                                 Preferentemente ingresa un número con WhatsApp para que sea más fácil contactarte.
@@ -100,6 +130,9 @@ const Reverso = () => {
                                 className="ubicacion"
                                 value={ubicacion}
                                 onChange={(e)=>{setUbicacion(e.target.value)}}
+                                onKeyUp={validacionUbi}
+                                onBlur={validacionUbi}
+                                id='inputUbicacion'
                             />
                             <label className='label-info'>
                                 El ícono los llevará a tu ubicación en Google Maps
@@ -174,7 +207,7 @@ const Reverso = () => {
             <div className='row justify-content-center mt-3'>
                 <div className='col-11 col-md-5'>
                     <form>
-                        <input type="checkbox" className='mr-2' id='terminos'/> 
+                        <input type="checkbox" className='mr-2' id='terminos' onChange={(e)=>{setTerminos(e.target.value)}}/> 
                         <label htmlFor='terminos'>
                             Acepto términos de privacidad
                         </label>
@@ -182,11 +215,54 @@ const Reverso = () => {
                 </div>
             </div>
 
-            <div className='row mt-3 justify-content-center'>
+            { telefonoValido == false | ubicacionValido == false | terminos == false ?
+                <div className='row mt-2 justify-content-center'>
+                    <div className='col-11 col-md-5'>
+                        <div className='error'>
+                            { telefonoValido == false &&
+                                <>
+                                    <p>
+                                        <i className="bi bi-exclamation-circle"></i>
+                                        El teléfono debe contener 10 dígitos y solo se admiten números.
+                                    </p>
+
+                                    { telefonoValido == '' ?
+                                        <p>
+                                            <i className="bi bi-exclamation-circle"></i>
+                                            Falta uno o más campos por llenar.
+                                        </p>
+                                        :
+                                        <></>
+                                    }
+                                </>
+                            }
+                            { ubicacionValido == false &&
+                                <>
+                                    <p>
+                                        <i className="bi bi-exclamation-circle"></i>
+                                        La dirección tiene que ser de 4 a 20 dígitos y no puede contener caracteres especiales (#*/)
+                                    </p>
+                                    { ubicacionValido == '' ? 
+                                        <p>
+                                            <i className="bi bi-exclamation-circle"></i>
+                                            Falta uno o más campos por llenar.
+                                        </p>
+                                        :
+                                        <></>
+                                    }
+                                </>
+                            }
+                        </div>
+                    </div>
+                </div>
+                :
+                <></>
+            }
+
+            <div className='row mt-3 justify-content-center siguiente'>
                 <div className='col-11 col-md-5'>
-                    <button>
-                        Siguiente 
-                        <i className="bi bi-chevron-double-right"></i>
+                    <button className={telefonoValido == true & ubicacionValido == true & terminos == 'on' ? '' : 'disabled'}>
+                        Finalizar
                     </button>
                 </div>
             </div>

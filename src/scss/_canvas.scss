@@ -47,19 +47,28 @@ $colorErrorBg: #ebc3c3;
             }
         }
     }
-    button{
-        float: right;
-        border-radius: 6px;
-        padding: 3px 10px;
-        border: 2px solid $colorVerde;
-        background: $colorVerde;
-        color: #fff;
-        outline: none;
-        transition: all .3s ease;
-
-        &:hover{
-            background: #029550;
-            border: 2px solid #029550;
+    .siguiente{
+        button{
+            float: right;
+            border-radius: 6px;
+            padding: 3px 10px;
+            border: 2px solid $colorVerde;
+            background: $colorVerde;
+            color: #fff;
+            outline: none;
+            transition: all .3s ease;
+            text-decoration: none;
+    
+            &:hover{
+                background: #029550;
+                border: 2px solid #029550;
+            }
+        }
+        .disabled {
+            cursor: not-allowed;
+            pointer-events: none;
+            background: #9c9b9b;
+            border: 2px solid #9c9b9b;
         }
     }
     .error{
@@ -130,7 +139,7 @@ $colorErrorBg: #ebc3c3;
             font-size: 20px;
         }
         input{
-            border: 1px solid $bordeColor;
+            border: 2px solid $bordeColor;
             border-radius: 6px;
             outline: none;
             padding: 3px 5px;
@@ -173,7 +182,7 @@ $colorErrorBg: #ebc3c3;
         font-size: 20px;
     }
     input, select{
-        border: 1px solid $bordeColor;
+        border: 2px solid $bordeColor;
         border-radius: 6px;
         outline: none;
         padding: 3px 5px;
@@ -209,7 +218,7 @@ $colorErrorBg: #ebc3c3;
             --toggle-shadow-offset: 10px;
             --toggle-wider: 3em;
             --color-grey: #cccccc;
-            --color-green: #4296f4;
+            --color-green: #00a859;
         }
         .slider {
         display: inline-block;

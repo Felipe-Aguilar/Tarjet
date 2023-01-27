@@ -1,6 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TusDatos = () => {
+
+    const [profesion, setProfesion] = useState();
+    const [especialidad, setEspecialidad] = useState();
+
+    const navigate = useNavigate();
+
+    const validar = () => {
+        if (profesion == 'Area de trabajo') {
+            document.getElementById('selectAreaTrabajo').style.border = '2px solid #f62e2e';
+        }else{
+            document.getElementById('selectAreaTrabajo').style.border = '2px solid #e3e3e3';
+        }
+        
+        if (especialidad == 'Especialidad') {
+            document.getElementById('selectEspecialidad').style.border = '2px solid #f62e2e';
+        }else{
+            document.getElementById('selectEspecialidad').style.border = '2px solid #e3e3e3';
+        }
+    }
+
     return ( 
         <div className='mt-3 TusDatos'>
 
@@ -12,8 +33,9 @@ const TusDatos = () => {
                             <i className="bi bi-question-circle-fill"></i>
                         </div>
                         <div className='d-flex align-items-center'>
-                            <select>
-                                <option value="" key="">Area de trabajo</option>
+                            <select onChange={(e)=>{setProfesion(e.target.value)}} onBlur={validar} id='selectAreaTrabajo'>
+                                <option value="Area de trabajo">Area de trabajo</option>
+                                <option value="Automotriz">Automotriz</option>
                             </select>
                             <label className='label-info'>
                                 Si no aparece tú área no te preocupes, <span>contáctanos</span> y solicítalo. <span>Nos encanta aprender.</span>
@@ -26,8 +48,9 @@ const TusDatos = () => {
                         </div>
 
                         <div className='d-flex align-items-center'>
-                            <select>
-                                <option value="" key="">Especialidad</option>
+                            <select onChange={(e)=>{setEspecialidad(e.target.value)}} onBlur={validar} id='selectEspecialidad'>
+                                <option value="Especialidad">Especialidad</option>
+                                <option value="Electrisista">Electrisista</option>
                             </select>
                             <label className='label-info'>
                                 Si no aparece tu especialidad no te preocupes, contáctanos y solicítalo.
@@ -82,13 +105,45 @@ const TusDatos = () => {
                     </form>
                 </div>
             </div>
+            
+            { profesion == 'Area de trabajo' | especialidad == 'Especialidad' ?
+                <div className='row mt-2 justify-content-center'>
+                    <div className='col-11 col-md-5'>
+                        <div className='error'>
+                            { profesion == 'Area de trabajo' ?
+                                <p>
+                                    <i className="bi bi-exclamation-circle"></i>
+                                    Por favor seleccione un Área de trabajo
+                                </p>
+                                :
+                                <></>
+                            }
+                            { especialidad == 'Especialidad' ? 
+                                <p>
+                                    <i className="bi bi-exclamation-circle"></i>
+                                    Por favor seleccione una Especialidad
+                                </p>
+                                :
+                                <></>
+                            }
+                        </div>
+                    </div>
+                </div>
+            :
+                <></>
+            }
 
-            <div className='row justify-content-center'>
+            <div className='row mt-1 justify-content-center siguiente'>
                 <div className='col-11 col-md-5'>
-                    <button>
+                    {/* <NavLink to="reverso" className={profesion == undefined | especialidad == undefined | profesion == 'Area de Trabajo' | especialidad == 'Especialidad' ? 'disabled' : ''}>
+                        Siguiente 
+                        <i className="bi bi-chevron-double-right"></i>
+                    </NavLink> */}
+                    <button onClick={()=>navigate("/canvas/reverso")} className={profesion == undefined | especialidad == undefined | profesion == 'Area de Trabajo' | especialidad == 'Especialidad' ? 'disabled' : ''}>
                         Siguiente 
                         <i className="bi bi-chevron-double-right"></i>
                     </button>
+                    
                 </div>
             </div>
 

@@ -14,7 +14,7 @@ const Canvas = () => {
         nombre: /^[a-zA-ZÀ-ÿ\s]{4,40}$/, // Letras y espacios, pueden llevar acentos.
         password: /^.{4,12}$/, // 4 a 12 digitos.
         correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+        telefono: /^\d{10}$/ // 7 a 14 numeros.
     }
 
     return ( 
@@ -33,13 +33,16 @@ const Canvas = () => {
             <div className='row mt-3 justify-content-center'>
                 <div className='col-12 col-md-8 menu'>
                     <div className='nav-container w-auto'>
-                        <NavLink to="tu-diseño" className={activo} onClick={()=>setActivo('active')}>
+                        {/* <NavLink to="tu-diseño" className={activo} onClick={()=>setActivo('active')}>
+                            <i className="bi bi-1-circle-fill"></i> Tu diseño
+                        </NavLink> */}
+                        <NavLink to="tu-diseño" style={{cursor: 'none', pointerEvents: 'none'}}>
                             <i className="bi bi-1-circle-fill"></i> Tu diseño
                         </NavLink>
-                        <NavLink to="tus-datos" onClick={()=>setActivo("")}>
+                        <NavLink to="tus-datos" style={{cursor: 'none', pointerEvents: 'none'}}>
                             <i className="bi bi-2-circle-fill"></i> Tus datos
                         </NavLink>
-                        <NavLink to="reverso" onClick={()=>setActivo("")}>
+                        <NavLink to="reverso" style={{cursor: 'none', pointerEvents: 'none'}}>
                             <i className="bi bi-3-circle-fill"></i> Reverso
                         </NavLink>
                     </div>
@@ -52,7 +55,7 @@ const Canvas = () => {
                 />
                 <Route path='tu-diseño' element={<TuDiseño />}/>
                 <Route path='tus-datos' element={<TusDatos />}/>
-                <Route path='reverso' element={<Reverso />}/>
+                <Route path='reverso' element={<Reverso numeroValidacion={expresiones.telefono} direccionValidacion={expresiones.nombre}/>}/>
             </Routes>
             
         </div>

@@ -1,19 +1,21 @@
-import { setSelectionRange } from '@testing-library/user-event/dist/utils/edit/selectionRange';
 import React, {useEffect, useRef, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import tarjetaFrenteVacia from '../../assets/TarjetaFrenteVacia.png';
 
 const TuDiseño = ({textoValidacion}) => {
 
     const [nombre, setNombre] = useState('');
-    const [nombreValido, setNombreValido] = useState(false);
+    const [nombreValido, setNombreValido] = useState();
 
     const [subtitulo, setSubtitulo] = useState('');
-    const [subtituloValido, setSubtituloValido] = useState(false);
+    const [subtituloValido, setSubtituloValido] = useState();
 
     const [canvasContext, setCanvasContext] = useState(null);
     const canvasRef = useRef(null);
     const canvasRefMobile = useRef(null);
+
+    const navigate = useNavigate();
     
     useEffect(()=>{
         const canvas = canvasRef.current;
@@ -80,7 +82,6 @@ const TuDiseño = ({textoValidacion}) => {
         }else{
             setSubtituloValido(false);
             document.getElementById('inputSubtitulo').style.border = '2px solid #f62e2e';
-            // setError('El subtitulo tiene que ser de 4 a 20 dígitos y solo puede contener letras.');
         }
         // if (subtitulo == "") {
         //     setError('Falta por llenar un campo');
@@ -156,29 +157,60 @@ const TuDiseño = ({textoValidacion}) => {
                 </div>
             </div>
 
-            
-            <div className='row mt-2 justify-content-center'>
-                <div className='col-11 col-md-5'>
-                    <div className='error'>
-                        <p>
-                            <i className="bi bi-exclamation-circle"></i>
-                            El nombre tiene que ser de 4 a 20 dígitos y solo puede contener letras.
-                        </p>
-                        <p>
-                            <i className="bi bi-exclamation-circle"></i>
-                            El subtitulo tiene que ser de 4 a 20 dígitos y solo puede contener letras.
-                        </p>
+            { nombreValido == false | subtituloValido == false ?
+                <div className='row mt-2 justify-content-center'>
+                    <div className='col-11 col-md-5'>
+                        <div className='error'>
+                            { nombreValido == false &&
+                                <>
+                                    <p>
+                                        <i className="bi bi-exclamation-circle"></i>
+                                        El nombre tiene que ser de 4 a 20 dígitos y solo puede contener letras.
+                                    </p>
+                                    { nombre == '' ?
+                                        <p>
+                                            <i className="bi bi-exclamation-circle"></i>
+                                            Falta uno o más campos por llenar.
+                                        </p>
+                                    :
+                                        <></>
+                                    }
+                                </>
+                            }
+                            { subtituloValido == false && 
+                                <>
+                                    <p>
+                                        <i className="bi bi-exclamation-circle"></i>
+                                        El texto debajo del nombre tiene que ser de 4 a 20 dígitos y solo puede contener letras.
+                                    </p>
+
+                                    { subtitulo == '' ?
+                                        <p>
+                                            <i className="bi bi-exclamation-circle"></i>
+                                            Falta uno o más campos por llenar.
+                                        </p>
+                                    :
+                                        <></>
+                                    }
+                                </>
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-            
 
-            <div className='row mt-2 justify-content-center'>
+            :
+                <>
+
+                </>
+            }
+
+            <div className='row mt-2 justify-content-center siguiente'>
                 <div className='col-11 col-md-5'>
-                    <button>
+                    <button onClick={()=> navigate("/canvas/tus-datos")} className={nombreValido == true & subtituloValido == true ? '' : 'disabled'}>
                         Siguiente 
                         <i className="bi bi-chevron-double-right"></i>
                     </button>
+                    
                 </div>
             </div>
 
