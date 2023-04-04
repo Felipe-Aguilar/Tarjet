@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 import Promo from '../assets/Promoo.png';
-import Promo2 from '../assets/Promo2.png';
+import Promo2 from '../assets/Promo2.webp';
 import Slider1 from '../assets/Slide1.jpg';
 import Slider2 from '../assets/Slide2.jpg';
 import Slider3 from '../assets/Slide3.png';

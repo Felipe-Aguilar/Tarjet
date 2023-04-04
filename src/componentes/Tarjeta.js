@@ -19,6 +19,11 @@ const TarjetaVista = () => {
     const [reverso, cambiarReverso]  = useState(true);
     const [compartir, cambiarCompartir] = useState(false);
 
+    const imagen = document.getElementById("imagenFrente");
+    const imagenVisible = document.body.contains(imagen);
+
+    console.log(imagenVisible);
+
     return (
         <>  
             <TarjetaVistaContenedor className='row justify-content-center align-items-md-center'>
@@ -40,8 +45,10 @@ const TarjetaVista = () => {
                                         alt="Tarjet | Tu tarjeta de presentación online"
                                         initial={{opacity:0}}
                                         animate={{opacity: 1}}
-                                        transition={{duration: 0.5}}
-                                        exit={{x:100, opacity: 0}}
+                                        // transition={{duration: 0.5}}
+                                        transition={{duration: 0}}
+                                        exit={{opacity: 0}}
+                                        id="imagenFrente"
                                     />
                                 </NavLink>
                             )
@@ -53,6 +60,7 @@ const TarjetaVista = () => {
                     <AnimatePresence>
                         { ver ?
                             !reverso && (
+                                !imagenVisible &&
                                 <NavLink to="/tarjetSite">
                                     {/* <motion.img 
                                         src={tarjetaReverso}
@@ -67,8 +75,10 @@ const TarjetaVista = () => {
                                         alt="Tarjet | Tu tarjeta de presentación online"
                                         initial={{opacity:0}}
                                         animate={{x: [-100, 0], opacity: 1}}
-                                        transition={{delay:0.5, duration: 0.5}}
-                                        exit={{opacity:0 ,x:100}}
+                                        // transition={{delay:0.5, duration: 0.5}}
+                                        transition={!imagenVisible ? {delay:1} : {delay: 0}}
+                                        // exit={{opacity:0, x: 100}}
+                                        exit={!imagenVisible ? {opacity: 0, x: 100} : {opacity: 0, x:-100}}
                                     />
                                 </NavLink>
                             )

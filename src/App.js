@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import QueEsTarjet from './componentes/QueEsTarjet';
 import HaztePremium from './componentes/HaztePremium';
 import Canvas from './componentes/Canvas';
+import AvisoPrivacidad from './componentes/AvisoPrivacidad';
 
 const App = () => {
   return ( 
@@ -25,6 +26,7 @@ const App = () => {
           <Route path='/que-es-tarjet' element={<QueEsTarjet />}/>
           <Route path='/hazte-premium' element={<HaztePremium />}/>
           <Route path='/canvas/*' element={<Canvas />}/>
+          <Route path='/aviso-privacidad' element={<AvisoPrivacidad />}/>
         </Routes>
 
         <Footer />
