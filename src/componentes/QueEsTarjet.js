@@ -2,17 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import Tarjetimg from '../assets/tarjetquees.png';
+
 import QuienesBanner from '../assets/quienesbanner.png';
 import QuienesBanner2 from '../assets/quienesbanner2.png';
-import MujerBanner from '../assets/MujerBanner.jpg';
-import collage from '../assets/collage.png';
-import mundo from '../assets/mundo.png';
-import corazon from '../assets/corazon.png';
-import tarjeteroFisico from '../assets/tarjeteroFisico.png';
-import tarjetFlecha from '../assets/tarjetFlecha.png';
-import esferas from '../assets/esferas.png';
-import celularElementos from '../assets/celularElementos.png';
+import collage from '../assets/collage.webp';
+import corazon from '../assets/corazon.webp';
+import tarjeteroFisico from '../assets/tarjeteroFisico.webp';
+import tarjetFlecha from '../assets/TarjetFlecha.webp';
+import esferas from '../assets/esferas.webp';
+import celularElementos from '../assets/celularElementos.webp';
 
 const QueEsTarjet = () => {
     return (
@@ -171,7 +169,7 @@ const QueEsTarjet = () => {
                 <div className='w-auto text-center'>
                     <h5>No es necesario crear una tarjeta, para ver, guardar y recomendar más Tarjets.</h5>
                     <h6>Solamente crea tu cuenta</h6>
-                    <a href="">Registro Sencillo</a>
+                    <a href='https://wa.me/5586763895'target='_blank'>Registro Sencillo</a>
                 </div>
             </CrearTarjeta>
 

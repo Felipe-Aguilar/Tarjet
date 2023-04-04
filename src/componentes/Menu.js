@@ -28,13 +28,13 @@ const Menu = ({cambioMenu}) => {
                         <img src={Corona} alt="Tarjet | Tu tarjeta de presentación Online"/>
                     </NavLink>
                     <a href="#">Contacto</a>
-                    <NavLink to="/canvas" onClick={()=>cambioMenu(true)}>Canvas</NavLink>
+                    {/* <NavLink to="/canvas" onClick={()=>cambioMenu(true)}>Canvas</NavLink> */}
                 </div>
 
-                <div className='sesion d-flex justify-content-center align-items-end'>
+                {/* <div className='sesion d-flex justify-content-center align-items-end'>
                     <a href="#" className='registro'>Registro</a>
                     <a href="#" className='iniciarSesion'>Iniciar Sesión</a>
-                </div>
+                </div> */}
             </MenuContenedor>
         </>
     );

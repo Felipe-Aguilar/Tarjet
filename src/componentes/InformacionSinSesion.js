@@ -2,23 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
-import Promo from '../assets/Promoo.png';
+import Promo from '../assets/Promoo.webp';
 import Promo2 from '../assets/Promo2.webp';
-import Slider1 from '../assets/Slide1.jpg';
-import Slider2 from '../assets/Slide2.jpg';
-import Slider3 from '../assets/Slide3.png';
-import Slider4 from '../assets/Slide4.png';
+import Slider1 from '../assets/Slide1.webp';
+import Slider2 from '../assets/Slide2.webp';
+import Slider3 from '../assets/Slide3.webp';
+import Slider4 from '../assets/Slide4.webp';
 import Banner3 from '../assets/Banner32.png';
-import Planes from '../assets/planes.png';
-import TarjetaGratis from '../assets/tarjetaGratis.png';
+import Planes from '../assets/planes.webp';
+import TarjetaGratis from '../assets/tarjetaGratis.webp';
 import mundo from '../assets/mundo.png';
-import Radar from '../assets/radar.png';
-import mujer from '../assets/mujer.png';
+import Radar from '../assets/radar.webp';
+import mujer from '../assets/mujer.webp';
 
 const Informacion = () => {
     return (
         <>
-            <div className='row mt-4 justify-content-center'>
+            <div className='row justify-content-center' style={{marginTop: "6rem"}}>
                 <div className='w-auto text-center'>
                     <h5> <span>Tarjet es </span> la tarjeta de presentación Totalmente Gratis.</h5>
                 </div>
@@ -47,11 +47,13 @@ const Informacion = () => {
                     <p>
                         Y compartir la información de lo que haces, <span>a todo el mundo.</span>
                     </p>
-                    <motion.button
+                    <motion.a
                         whileTap={{scale: 1.4}}
+                        href='https://wa.me/5586763895'
+                        target='_blank'
                     >
                         Regístrate <i className="bi bi-arrow-right"></i>
-                    </motion.button>
+                    </motion.a>
                 </div>
             </CelularPersonas>
 
@@ -124,11 +126,13 @@ const Informacion = () => {
                         whileInView={{rotate: [0,-5]}}
                         viewport={{once:true}}
                     />
-                    <motion.button
+                    <motion.a
                         whileTap={{scale: 1.4}}
+                        href='https://wa.me/5586763895'
+                        target='_blank'
                     >
                         Regístrate <i className="bi bi-arrow-right"></i>
-                    </motion.button>
+                    </motion.a>
                 </div>
             </SliderCrea>
 
@@ -221,7 +225,7 @@ const Informacion = () => {
                 <div className='w-auto text-center'>
                     <h6>Configura gratis!</h6>
                     <h5>Crea tu Tarjet y comparte tu información de manera profesional.</h5>
-                    <a href="#">
+                    <a href='https://wa.me/5586763895'target='_blank'>
                         Regístrate y Disfruta
                     </a>
 
@@ -300,11 +304,13 @@ const Informacion = () => {
                         No es necesario crear una tarjeta virtual para guardar, recomendar y recibir recomendaciones de Tarjet's
                     </p>
                     <img src={mujer} alt="Tarjet | Tu tarjeta de presentación Online"/>
-                    <motion.button
+                    <motion.a
                             whileTap={{scale: 1.4}}
+                            href='https://wa.me/5586763895'
+                            target='_blank'
                         >
                             Solo Regístrate <i className="bi bi-arrow-right"></i>
-                        </motion.button>
+                        </motion.a>
                 </div>
 
             </AmarilloChica>
@@ -353,10 +359,11 @@ const CelularPersonas = styled.div`
         p{
             margin-bottom: 80px;
         }
-        button{
+        button,a{
             position: absolute;
             right: 30px;
             bottom: 30px;
+            text-decoration: none;
         }
         .telefonito{
             width: 60px;
@@ -364,7 +371,7 @@ const CelularPersonas = styled.div`
             left: 175px;
             top: 145px;
         }
-        button{
+        button,a{
             border:none;
             font-size: 25px;
             background: transparent;
@@ -430,7 +437,7 @@ const SliderCrea = styled.div`
                 margin-bottom: 60px;
             }
         }
-        button{
+        button, a{
             position: absolute;
             bottom: 30px;
             right: 30px;
@@ -441,6 +448,8 @@ const SliderCrea = styled.div`
             margin-top: 30px;
             outline: none;
             float: right;
+            text-decoration:none;
+            color: #000;
             
             @media screen and (max-width: 360px) and (max-height: 800px){
                 margin-top: 30px;
@@ -695,7 +704,8 @@ const AmarilloChica = styled.div`
                 width: 90%;
             }
         }
-        button{
+        button, a{
+            text-decoration: none;
             border:none;
             font-size: 25px;
             background: transparent;

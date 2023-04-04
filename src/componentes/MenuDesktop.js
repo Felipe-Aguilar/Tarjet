@@ -9,9 +9,9 @@ const MenuDesktop = () => {
             <NavLink href="">Tienda</NavLink>
             <NavLink to="/hazte-premium">Premium</NavLink>
             <NavLink href="">Empresas</NavLink>
-            <NavLink href="">Mi Perfil</NavLink>
             <NavLink href="">Contacto</NavLink>
-            <NavLink to="/canvas">Canvas</NavLink>
+            <a href="https://tarjet.site/#/login">Iniciar Sesión</a>
+            {/* <NavLink to="/canvas">Canvas</NavLink> */}
         </MenuDesktopContenedor>
     );
 }

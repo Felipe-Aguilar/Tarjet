@@ -5,15 +5,15 @@ import { AnimatePresence, motion } from 'framer-motion';
 import BannerPremium1 from '../assets/BannerPremium1.png';
 import BannerPremium2 from '../assets/BannerPremium2.png';
 import BannerPremium3 from '../assets/BannerPremium3.png';
-import PersonaMovimiento from '../assets/PersonaMovimiento.png';
+import PersonaMovimiento from '../assets/PersonaMovimiento.webp';
 import ChicaDatos from '../assets/ChicaDatos.png';
-import TarjetaPremium from '../assets/TarjetaPremium.png';
-import Radar from '../assets/radar.png';
-import PersonasMundo from '../assets/PersonasMundo.png';
+import TarjetaPremium from '../assets/TarjetaPremium.webp';
+import Radar from '../assets/radar.webp';
+import PersonasMundo from '../assets/PersonasMundo.webp';
 import Tarjetas from '../assets/tarjetas.png';
-import Restaurante from '../assets/restaurante.png';
+import Restaurante from '../assets/restaurante.webp';
 
-import Promoo from '../assets/Promoo.png';
+import Promoo from '../assets/Promoo.webp';
 
 
 const HaztePremium = () => {
@@ -196,11 +196,13 @@ const HaztePremium = () => {
                         whileTap={{scale:1}}
                         viewport={{once:true}}
                     />
-                    <motion.button
+                    <motion.a
                         whileTap={{scale: 1.4}}
+                        href='https://wa.me/5586763895'
+                        target='_blank'
                     >
                         Regístrate <i className="bi bi-arrow-right"></i>
-                    </motion.button>
+                    </motion.a>
                 </div>
             </TarjetEmpresa>
 
@@ -440,9 +442,13 @@ const TarjetEmpresa = styled.div`
         color: #212529;
 
         img{
-            width: 100%;
+            width: 80%;
+            display: block;
+            margin: auto;
         }
-        button{
+        button, a{
+            text-decoration: none;
+            color: #000;
             border:none;
             font-size: 25px;
             background: transparent;

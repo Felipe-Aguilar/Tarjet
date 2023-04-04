@@ -10,7 +10,7 @@ const VistaInicio = () => {
 
     return ( 
         <>
-            <Tarjeta />
+            {/* <Tarjeta /> */}
             {sesion ? 
                 <InformacionSinSesion/>
             :
