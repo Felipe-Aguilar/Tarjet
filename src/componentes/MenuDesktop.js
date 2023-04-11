@@ -9,7 +9,7 @@ const MenuDesktop = () => {
             <NavLink href="">Tienda</NavLink>
             <NavLink to="/hazte-premium">Premium</NavLink>
             <NavLink href="">Empresas</NavLink>
-            <NavLink href="">Contacto</NavLink>
+            <a href="https://wa.me/5586763895" target='_blank'>Contacto</a>
             <a href="https://tarjet.site/#/login">Iniciar Sesión</a>
             {/* <NavLink to="/canvas">Canvas</NavLink> */}
         </MenuDesktopContenedor>

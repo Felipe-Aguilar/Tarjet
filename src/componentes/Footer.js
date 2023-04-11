@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 import TarjetBlanco from '../assets/TarjetBlanco.png';
 
-const Footer = () => {
 
+const Footer = () => {
+    
     const navigate = useNavigate();
 
     return ( 
@@ -25,7 +26,7 @@ const Footer = () => {
             </div>
 
                 <div className='col-6 d-block d-md-none links-mobile'>
-                    <a href="">Aviso de Privacidad</a>
+                    <a onClick={()=>navigate('/aviso-privacidad')}>Aviso de Privacidad</a>
                     <a href="">Tienda</a>
                     <a href="">Contáctanos</a>
                 </div>
@@ -76,7 +77,7 @@ const FooterContenedor = styled.footer`
     
     .links-mobile{
         margin-top: 20px;
-        text-align: center;
+        text-align: left;
         a{
             display: block;
             color:#fff;
@@ -92,7 +93,6 @@ const FooterContenedor = styled.footer`
         color: #00a859;
         transition: all .3s ease;
         text-decoration: none;
-        cursor: pointer;
     }
 `;
 

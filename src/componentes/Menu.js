@@ -27,7 +27,7 @@ const Menu = ({cambioMenu}) => {
                         Hazte Premium
                         <img src={Corona} alt="Tarjet | Tu tarjeta de presentación Online"/>
                     </NavLink>
-                    <a href="#">Contacto</a>
+                    <a href="https://wa.me/5586763895" target='_blank'>Contacto</a>
                     {/* <NavLink to="/canvas" onClick={()=>cambioMenu(true)}>Canvas</NavLink> */}
                 </div>
 
