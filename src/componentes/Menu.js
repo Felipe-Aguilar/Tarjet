@@ -19,7 +19,7 @@ const Menu = ({cambioMenu}) => {
                     <NavLink to="/" onClick={()=>cambioMenu(true)}>Inicio</NavLink>
                     <NavLink to="/que-es-tarjet" onClick={()=>cambioMenu(true)}>¿Qué es Tarjet?</NavLink>
                     <a href="#">Tienda de Productos</a>
-                    <a href="#">Mi Perfil</a>
+                    <a href="https://tarjet.site/#/login">Mi Perfil</a>
                     <a href="#">Empresas</a>
                     <NavLink to="/hazte-premium" onClick={()=>cambioMenu(true)}
                         className='d-flex align-items-center corona'
