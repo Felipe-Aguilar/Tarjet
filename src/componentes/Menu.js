@@ -8,19 +8,19 @@ const Menu = ({cambioMenu}) => {
     return ( 
         <>
             <MenuContenedor className=''>
-                <div className='d-flex justify-content-center'>
+                {/* <div className='d-flex justify-content-center'>
                     <div className='buscar' for="Buscar">
                         <i className="bi bi-search"></i>
                         <input type="search" placeholder="Buscar Tarjet's" id='Buscar'/>
                     </div>
-                </div>
+                </div> */}
 
                 <div className='links'>
                     <NavLink to="/" onClick={()=>cambioMenu(true)}>Inicio</NavLink>
                     <NavLink to="/que-es-tarjet" onClick={()=>cambioMenu(true)}>¿Qué es Tarjet?</NavLink>
-                    <a href="#">Tienda de Productos</a>
+                    <a href="#" className='disabled'>Tienda de Productos</a>
                     <a href="https://tarjet.site/#/login">Mi Perfil</a>
-                    <a href="#">Empresas</a>
+                    <a href="#" className='disabled'>Empresas</a>
                     <NavLink to="/hazte-premium" onClick={()=>cambioMenu(true)}
                         className='d-flex align-items-center corona'
                     >
@@ -80,6 +80,10 @@ const MenuContenedor = styled.div`
                 width: 20px;
                 margin-left: 8px;
             }
+        }
+        .disabled{
+            color: gray;
+            pointer-events: none;
         }
     }
 
